@@ -15,6 +15,9 @@
             <h1 class="project-title">Turning Point</h1>
             <p class="project-subtitle">Zero Down Network & Service</p>
         </div>
+        <div class="quote-banner">
+            <p class="quote-text">نقطة التحول في البنية التحتية للشبكات والخدمات</p>
+        </div>
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
         <nav class="main-nav" id="mainNav">
             <a href="index.html">الرئيسية</a>
@@ -56,162 +59,168 @@
 
                     <p>هذه المنطقة هي المسؤولة عن الربط مع مزود خدمة الإنترنت وتأمين الدخول للشبكة.</p>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>الجهاز من</th>
-                                <th>المنفذ</th>
-                                <th>الجهاز إلى</th>
-                                <th>المنفذ</th>
-                                <th>نوع الكابل</th>
-                                <th>الغرض التقني</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ISP Router</td>
-                                <td>Gi0/0/0</td>
-                                <td>Outside-SW</td>
-                                <td>Fa0/1</td>
-                                <td>Straight</td>
-                                <td>وصلة الإنترنت الرئيسية القادمة من المزود.</td>
-                            </tr>
-                            <tr>
-                                <td>Outside SW</td>
-                                <td>Fa0/2</td>
-                                <td>ASA-1 (Active)</td>
-                                <td>Gi1/1</td>
-                                <td>Straight</td>
-                                <td>المسار الرئيسي لحركة المرور الخارجية.</td>
-                            </tr>
-                            <tr>
-                                <td>Outside SW</td>
-                                <td>Fa0/3</td>
-                                <td>ASA-2 (Standby)</td>
-                                <td>Gi1/1</td>
-                                <td>Straight</td>
-                                <td>المسار الاحتياطي لحركة المرور الخارجية.</td>
-                            </tr>
-                            <tr>
-                                <td>ASA-1</td>
-                                <td>Gi1/3</td>
-                                <td>ASA-2</td>
-                                <td>Gi1/3</td>
-                                <td>Cross Over</td>
-                                <td>رابط الفشل (Failover Link) لنقل الحالة والمزامنة.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>الجهاز من</th>
+                                    <th>المنفذ</th>
+                                    <th>الجهاز إلى</th>
+                                    <th>المنفذ</th>
+                                    <th>نوع الكابل</th>
+                                    <th>الغرض التقني</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="الجهاز من">ISP Router</td>
+                                    <td data-label="المنفذ">Gi0/0/0</td>
+                                    <td data-label="الجهاز إلى">Outside-SW</td>
+                                    <td data-label="المنفذ">Fa0/1</td>
+                                    <td data-label="نوع الكابل">Straight</td>
+                                    <td data-label="الغرض التقني">وصلة الإنترنت الرئيسية القادمة من المزود.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز من">Outside SW</td>
+                                    <td data-label="المنفذ">Fa0/2</td>
+                                    <td data-label="الجهاز إلى">ASA-1 (Active)</td>
+                                    <td data-label="المنفذ">Gi1/1</td>
+                                    <td data-label="نوع الكابل">Straight</td>
+                                    <td data-label="الغرض التقني">المسار الرئيسي لحركة المرور الخارجية.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز من">Outside SW</td>
+                                    <td data-label="المنفذ">Fa0/3</td>
+                                    <td data-label="الجهاز إلى">ASA-2 (Standby)</td>
+                                    <td data-label="المنفذ">Gi1/1</td>
+                                    <td data-label="نوع الكابل">Straight</td>
+                                    <td data-label="الغرض التقني">المسار الاحتياطي لحركة المرور الخارجية.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز من">ASA-1</td>
+                                    <td data-label="المنفذ">Gi1/3</td>
+                                    <td data-label="الجهاز إلى">ASA-2</td>
+                                    <td data-label="المنفذ">Gi1/3</td>
+                                    <td data-label="نوع الكابل">Cross Over</td>
+                                    <td data-label="الغرض التقني">رابط الفشل (Failover Link) لنقل الحالة والمزامنة.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <h2>5.2 منطقة القلب والتوزيع (Core & Distribution Zone)</h2>
 
                     <p>تعتمد هذه المنطقة على روابط Gigabit عالية السرعة وتقنية EtherChannel لضمان التكرار.</p>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>الجهاز من</th>
-                                <th>المنفذ</th>
-                                <th>الجهاز إلى</th>
-                                <th>المنفذ</th>
-                                <th>نوع الكابل</th>
-                                <th>الغرض / التقنية</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ASA-1</td>
-                                <td>Gi1/2</td>
-                                <td>Core SW1</td>
-                                <td>Gi1/0/24</td>
-                                <td>Straight</td>
-                                <td>ربط الشبكة الداخلية (Inside) بالنواة.</td>
-                            </tr>
-                            <tr>
-                                <td>ASA-2</td>
-                                <td>Gi1/2</td>
-                                <td>Core SW2</td>
-                                <td>Gi1/0/24</td>
-                                <td>Straight</td>
-                                <td>ربط المسار الاحتياطي للشبكة الداخلية.</td>
-                            </tr>
-                            <tr>
-                                <td>Core SW1</td>
-                                <td>Gi1/0/1+2</td>
-                                <td>Core SW2</td>
-                                <td>Gi1/0/1+2</td>
-                                <td>Cross Over</td>
-                                <td>EtherChannel (Peer Link) بين محولي النواة.</td>
-                            </tr>
-                            <tr>
-                                <td>Core SW1</td>
-                                <td>Gi1/0/3+4</td>
-                                <td>Dist SW1</td>
-                                <td>Gi1/0/1+2</td>
-                                <td>Cross Over</td>
-                                <td>رابط صاعد (Uplink 1) لطبقة التوزيع.</td>
-                            </tr>
-                            <tr>
-                                <td>Core SW2</td>
-                                <td>Gi1/0/3+4</td>
-                                <td>Dist SW2</td>
-                                <td>Gi1/0/1+2</td>
-                                <td>Cross Over</td>
-                                <td>رابط صاعد (Uplink 2) لطبقة التوزيع.</td>
-                            </tr>
-                            <tr>
-                                <td>Dist SW1</td>
-                                <td>Gi1/0/23+24</td>
-                                <td>Dist SW2</td>
-                                <td>Gi1/0/23+24</td>
-                                <td>Cross Over</td>
-                                <td>رابط تكرار HSRP لضمان مزامنة البوابات.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>الجهاز من</th>
+                                    <th>المنفذ</th>
+                                    <th>الجهاز إلى</th>
+                                    <th>المنفذ</th>
+                                    <th>نوع الكابل</th>
+                                    <th>الغرض / التقنية</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="الجهاز من">ASA-1</td>
+                                    <td data-label="المنفذ">Gi1/2</td>
+                                    <td data-label="الجهاز إلى">Core SW1</td>
+                                    <td data-label="المنفذ">Gi1/0/24</td>
+                                    <td data-label="نوع الكابل">Straight</td>
+                                    <td data-label="الغرض / التقنية">ربط الشبكة الداخلية (Inside) بالنواة.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز من">ASA-2</td>
+                                    <td data-label="المنفذ">Gi1/2</td>
+                                    <td data-label="الجهاز إلى">Core SW2</td>
+                                    <td data-label="المنفذ">Gi1/0/24</td>
+                                    <td data-label="نوع الكابل">Straight</td>
+                                    <td data-label="الغرض / التقنية">ربط المسار الاحتياطي للشبكة الداخلية.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز من">Core SW1</td>
+                                    <td data-label="المنفذ">Gi1/0/1+2</td>
+                                    <td data-label="الجهاز إلى">Core SW2</td>
+                                    <td data-label="المنفذ">Gi1/0/1+2</td>
+                                    <td data-label="نوع الكابل">Cross Over</td>
+                                    <td data-label="الغرض / التقنية">EtherChannel (Peer Link) بين محولي النواة.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز من">Core SW1</td>
+                                    <td data-label="المنفذ">Gi1/0/3+4</td>
+                                    <td data-label="الجهاز إلى">Dist SW1</td>
+                                    <td data-label="المنفذ">Gi1/0/1+2</td>
+                                    <td data-label="نوع الكابل">Cross Over</td>
+                                    <td data-label="الغرض / التقنية">رابط صاعد (Uplink 1) لطبقة التوزيع.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز من">Core SW2</td>
+                                    <td data-label="المنفذ">Gi1/0/3+4</td>
+                                    <td data-label="الجهاز إلى">Dist SW2</td>
+                                    <td data-label="المنفذ">Gi1/0/1+2</td>
+                                    <td data-label="نوع الكابل">Cross Over</td>
+                                    <td data-label="الغرض / التقنية">رابط صاعد (Uplink 2) لطبقة التوزيع.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز من">Dist SW1</td>
+                                    <td data-label="المنفذ">Gi1/0/23+24</td>
+                                    <td data-label="الجهاز إلى">Dist SW2</td>
+                                    <td data-label="المنفذ">Gi1/0/23+24</td>
+                                    <td data-label="نوع الكابل">Cross Over</td>
+                                    <td data-label="الغرض / التقنية">رابط تكرار HSRP لضمان مزامنة البوابات.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <h2>5.3 طبقة الوصول والربط الطرفي (Access Layer Connectivity)</h2>
 
                     <p>تركز هذه الطبقة على ربط المستخدمين والخدمات المتخصصة بمحولات التوزيع.</p>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>الجهاز من</th>
-                                <th>المنفذ</th>
-                                <th>الجهاز إلى</th>
-                                <th>المنفذ</th>
-                                <th>نوع الكابل</th>
-                                <th>الملاحظات التقنية</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Dist-SW1</td>
-                                <td>Gi1/0/10</td>
-                                <td>WLC 2504</td>
-                                <td>Gi1</td>
-                                <td>Straight</td>
-                                <td>يجب إعداد المنفذ كـTrunk لنقل شبكات الإدارة.</td>
-                            </tr>
-                            <tr>
-                                <td>Dist-SW1</td>
-                                <td>Gi1/0/11</td>
-                                <td>CME Router</td>
-                                <td>Gi0/0</td>
-                                <td>Straight</td>
-                                <td>يجب إعداد المنفذ كـAccess وتخصيصه لـVLAN 20.</td>
-                            </tr>
-                            <tr>
-                                <td>Access SW</td>
-                                <td>Gi0/1+2</td>
-                                <td>Dist SW1</td>
-                                <td>Gi1/0/5+6</td>
-                                <td>Cross Over</td>
-                                <td>رابط تجميع (L2 EtherChannel) لضمان السرعة.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>الجهاز من</th>
+                                    <th>المنفذ</th>
+                                    <th>الجهاز إلى</th>
+                                    <th>المنفذ</th>
+                                    <th>نوع الكابل</th>
+                                    <th>الملاحظات التقنية</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="الجهاز من">Dist-SW1</td>
+                                    <td data-label="المنفذ">Gi1/0/10</td>
+                                    <td data-label="الجهاز إلى">WLC 2504</td>
+                                    <td data-label="المنفذ">Gi1</td>
+                                    <td data-label="نوع الكابل">Straight</td>
+                                    <td data-label="الملاحظات التقنية">يجب إعداد المنفذ كـTrunk لنقل شبكات الإدارة.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز من">Dist-SW1</td>
+                                    <td data-label="المنفذ">Gi1/0/11</td>
+                                    <td data-label="الجهاز إلى">CME Router</td>
+                                    <td data-label="المنفذ">Gi0/0</td>
+                                    <td data-label="نوع الكابل">Straight</td>
+                                    <td data-label="الملاحظات التقنية">يجب إعداد المنفذ كـAccess وتخصيصه لـVLAN 20.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز من">Access SW</td>
+                                    <td data-label="المنفذ">Gi0/1+2</td>
+                                    <td data-label="الجهاز إلى">Dist SW1</td>
+                                    <td data-label="المنفذ">Gi1/0/5+6</td>
+                                    <td data-label="نوع الكابل">Cross Over</td>
+                                    <td data-label="الملاحظات التقنية">رابط تجميع (L2 EtherChannel) لضمان السرعة.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="navigation-buttons">
                         <a href="Infrastructure.html" class="nav-btn prev">← البنية التحتية</a>

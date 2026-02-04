@@ -55,165 +55,171 @@
 
                     <h2>6.1 مخطط الشبكات الظاهرية (VLAN Structure)</h2>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>رقم الـVLAN</th>
-                                <th>الاسم الوصفي</th>
-                                <th>النطاق الشبكي (Subnet)</th>
-                                <th>بوابة HSRP (Virtual IP)</th>
-                                <th>الوظيفة المحددة</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>10</td>
-                                <td>DATA_Sales</td>
-                                <td>10.1.10.0/24</td>
-                                <td>10.1.10.1</td>
-                                <td>أجهزة موظفي المبيعات والبيانات العامة.</td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td>VOICE_VoIP</td>
-                                <td>10.1.20.0/24</td>
-                                <td>10.1.20.1</td>
-                                <td>حركة مرور الصوت وهواتف IP سيسكو.</td>
-                            </tr>
-                            <tr>
-                                <td>37</td>
-                                <td>SERVERS_DC</td>
-                                <td>10.1.37.0/24</td>
-                                <td>10.1.37.1</td>
-                                <td>الخوادم المركزية (DNS, Web, Email, DB).</td>
-                            </tr>
-                            <tr>
-                                <td>70</td>
-                                <td>WIRELESS_User</td>
-                                <td>10.1.70.0/24</td>
-                                <td>10.1.70.1</td>
-                                <td>مستخدمي الشبكة اللاسلكية والضيوف.</td>
-                            </tr>
-                            <tr>
-                                <td>90</td>
-                                <td>Eng_Data</td>
-                                <td>10.1.90.0/24</td>
-                                <td>10.1.90.1</td>
-                                <td>أجهزة القسم الهندسي والبيانات التقنية.</td>
-                            </tr>
-                            <tr>
-                                <td>99</td>
-                                <td>MGMT_Native</td>
-                                <td>10.1.99.0/24</td>
-                                <td>10.1.99.1</td>
-                                <td>إدارة أجهزة الشبكة (VLAN المحايدة).</td>
-                            </tr>
-                            <tr>
-                                <td>200</td>
-                                <td>ISP_Edge</td>
-                                <td>209.165.200.224/29</td>
-                                <td>209.165.200.225</td>
-                                <td>شبكة الربط الخارجي (Public Subnet).</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>رقم الـVLAN</th>
+                                    <th>الاسم الوصفي</th>
+                                    <th>النطاق الشبكي (Subnet)</th>
+                                    <th>بوابة HSRP (Virtual IP)</th>
+                                    <th>الوظيفة المحددة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="رقم الـVLAN">10</td>
+                                    <td data-label="الاسم الوصفي">DATA_Sales</td>
+                                    <td data-label="النطاق الشبكي">10.1.10.0/24</td>
+                                    <td data-label="بوابة HSRP">10.1.10.1</td>
+                                    <td data-label="الوظيفة المحددة">أجهزة موظفي المبيعات والبيانات العامة.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="رقم الـVLAN">20</td>
+                                    <td data-label="الاسم الوصفي">VOICE_VoIP</td>
+                                    <td data-label="النطاق الشبكي">10.1.20.0/24</td>
+                                    <td data-label="بوابة HSRP">10.1.20.1</td>
+                                    <td data-label="الوظيفة المحددة">حركة مرور الصوت وهواتف IP سيسكو.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="رقم الـVLAN">37</td>
+                                    <td data-label="الاسم الوصفي">SERVERS_DC</td>
+                                    <td data-label="النطاق الشبكي">10.1.37.0/24</td>
+                                    <td data-label="بوابة HSRP">10.1.37.1</td>
+                                    <td data-label="الوظيفة المحددة">الخوادم المركزية (DNS, Web, Email, DB).</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="رقم الـVLAN">70</td>
+                                    <td data-label="الاسم الوصفي">WIRELESS_User</td>
+                                    <td data-label="النطاق الشبكي">10.1.70.0/24</td>
+                                    <td data-label="بوابة HSRP">10.1.70.1</td>
+                                    <td data-label="الوظيفة المحددة">مستخدمي الشبكة اللاسلكية والضيوف.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="رقم الـVLAN">90</td>
+                                    <td data-label="الاسم الوصفي">Eng_Data</td>
+                                    <td data-label="النطاق الشبكي">10.1.90.0/24</td>
+                                    <td data-label="بوابة HSRP">10.1.90.1</td>
+                                    <td data-label="الوظيفة المحددة">أجهزة القسم الهندسي والبيانات التقنية.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="رقم الـVLAN">99</td>
+                                    <td data-label="الاسم الوصفي">MGMT_Native</td>
+                                    <td data-label="النطاق الشبكي">10.1.99.0/24</td>
+                                    <td data-label="بوابة HSRP">10.1.99.1</td>
+                                    <td data-label="الوظيفة المحددة">إدارة أجهزة الشبكة (VLAN المحايدة).</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="رقم الـVLAN">200</td>
+                                    <td data-label="الاسم الوصفي">ISP_Edge</td>
+                                    <td data-label="النطاق الشبكي">209.165.200.224/29</td>
+                                    <td data-label="بوابة HSRP">209.165.200.225</td>
+                                    <td data-label="الوظيفة المحددة">شبكة الربط الخارجي (Public Subnet).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <h2>6.2 مصفوفة الروابط البينية للنقاط (Point-to-Point Connectivity Matrix)</h2>
 
                     <p>تستخدم هذه الروابط لنقل البيانات بين طبقات الشبكة المختلفة باستخدام عناوين /30 لتوفير النطاق.</p>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>اسم الرابط (Link Name)</th>
-                                <th>الجهاز الأول (IP)</th>
-                                <th>الجهاز الثاني (IP)</th>
-                                <th>الشبكة الفرعية</th>
-                                <th>نوع التوجيه</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ASA to Core</td>
-                                <td>172.16.0.1 (ASA VIP)</td>
-                                <td>172.16.0.3 (Core VIP)</td>
-                                <td>172.16.0.0/29</td>
-                                <td>Static/OSPF</td>
-                            </tr>
-                            <tr>
-                                <td>Core1 to Core2</td>
-                                <td>10.255.0.21</td>
-                                <td>10.255.0.22</td>
-                                <td>10.255.0.20/30</td>
-                                <td>OSPF Area 0</td>
-                            </tr>
-                            <tr>
-                                <td>Core1 to Dist1</td>
-                                <td>10.255.0.5</td>
-                                <td>10.255.0.6</td>
-                                <td>10.255.0.4/30</td>
-                                <td>OSPF Area 0</td>
-                            </tr>
-                            <tr>
-                                <td>Core2 to Dist1</td>
-                                <td>10.255.0.13</td>
-                                <td>10.255.0.14</td>
-                                <td>10.255.0.12/30</td>
-                                <td>OSPF Area 0</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>اسم الرابط (Link Name)</th>
+                                    <th>الجهاز الأول (IP)</th>
+                                    <th>الجهاز الثاني (IP)</th>
+                                    <th>الشبكة الفرعية</th>
+                                    <th>نوع التوجيه</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="اسم الرابط">ASA to Core</td>
+                                    <td data-label="الجهاز الأول">172.16.0.1 (ASA VIP)</td>
+                                    <td data-label="الجهاز الثاني">172.16.0.3 (Core VIP)</td>
+                                    <td data-label="الشبكة الفرعية">172.16.0.0/29</td>
+                                    <td data-label="نوع التوجيه">Static/OSPF</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="اسم الرابط">Core1 to Core2</td>
+                                    <td data-label="الجهاز الأول">10.255.0.21</td>
+                                    <td data-label="الجهاز الثاني">10.255.0.22</td>
+                                    <td data-label="الشبكة الفرعية">10.255.0.20/30</td>
+                                    <td data-label="نوع التوجيه">OSPF Area 0</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="اسم الرابط">Core1 to Dist1</td>
+                                    <td data-label="الجهاز الأول">10.255.0.5</td>
+                                    <td data-label="الجهاز الثاني">10.255.0.6</td>
+                                    <td data-label="الشبكة الفرعية">10.255.0.4/30</td>
+                                    <td data-label="نوع التوجيه">OSPF Area 0</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="اسم الرابط">Core2 to Dist1</td>
+                                    <td data-label="الجهاز الأول">10.255.0.13</td>
+                                    <td data-label="الجهاز الثاني">10.255.0.14</td>
+                                    <td data-label="الشبكة الفرعية">10.255.0.12/30</td>
+                                    <td data-label="نوع التوجيه">OSPF Area 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <h2>6.3 توثيق الأنظمة والخدمات الطرفية (End-System Documentation)</h2>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>الجهاز الطرفي</th>
-                                <th>الشبكة (VLAN)</th>
-                                <th>عنوان الـIP</th>
-                                <th>البوابة (Gateway)</th>
-                                <th>الدور / الوظيفة</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Server-DC</td>
-                                <td>37</td>
-                                <td>10.1.37.10</td>
-                                <td>10.1.37.1</td>
-                                <td>DNS, Web, Email Services.</td>
-                            </tr>
-                            <tr>
-                                <td>WLC 2504</td>
-                                <td>99</td>
-                                <td>10.1.99.254</td>
-                                <td>10.1.99.1</td>
-                                <td>Wireless Management Controller.</td>
-                            </tr>
-                            <tr>
-                                <td>CME Router</td>
-                                <td>20</td>
-                                <td>10.1.20.254</td>
-                                <td>10.1.20.1</td>
-                                <td>VoIP Telephony Gateway.</td>
-                            </tr>
-                            <tr>
-                                <td>Access Points</td>
-                                <td>99</td>
-                                <td>DHCP</td>
-                                <td>10.1.99.1</td>
-                                <td>Wireless Connectivity.</td>
-                            </tr>
-                            <tr>
-                                <td>Admin PC</td>
-                                <td>10</td>
-                                <td>10.1.10.100</td>
-                                <td>10.1.10.1</td>
-                                <td>Network Management Station.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>الجهاز الطرفي</th>
+                                    <th>الشبكة (VLAN)</th>
+                                    <th>عنوان الـIP</th>
+                                    <th>البوابة (Gateway)</th>
+                                    <th>الدور / الوظيفة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="الجهاز الطرفي">Server-DC</td>
+                                    <td data-label="الشبكة (VLAN)">37</td>
+                                    <td data-label="عنوان الـIP">10.1.37.10</td>
+                                    <td data-label="البوابة">10.1.37.1</td>
+                                    <td data-label="الدور / الوظيفة">DNS, Web, Email Services.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز الطرفي">WLC 2504</td>
+                                    <td data-label="الشبكة (VLAN)">99</td>
+                                    <td data-label="عنوان الـIP">10.1.99.254</td>
+                                    <td data-label="البوابة">10.1.99.1</td>
+                                    <td data-label="الدور / الوظيفة">Wireless Management Controller.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز الطرفي">CME Router</td>
+                                    <td data-label="الشبكة (VLAN)">20</td>
+                                    <td data-label="عنوان الـIP">10.1.20.254</td>
+                                    <td data-label="البوابة">10.1.20.1</td>
+                                    <td data-label="الدور / الوظيفة">VoIP Telephony Gateway.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز الطرفي">Access Points</td>
+                                    <td data-label="الشبكة (VLAN)">99</td>
+                                    <td data-label="عنوان الـIP">DHCP</td>
+                                    <td data-label="البوابة">10.1.99.1</td>
+                                    <td data-label="الدور / الوظيفة">Wireless Connectivity.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="الجهاز الطرفي">Admin PC</td>
+                                    <td data-label="الشبكة (VLAN)">10</td>
+                                    <td data-label="عنوان الـIP">10.1.10.100</td>
+                                    <td data-label="البوابة">10.1.10.1</td>
+                                    <td data-label="الدور / الوظيفة">Network Management Station.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="navigation-buttons">
                         <a href="physical connections.html" class="nav-btn prev">← التوصيلات الفيزيائية</a>
