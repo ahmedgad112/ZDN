@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التوصيلات الفيزيائية - Turning Point</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="project-title">Turning Point</h1>
+            <p class="project-subtitle">Zero Down Network & Service</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="Executive Summary.html">1. الملخص التنفيذي</a>
+            <a href="Administrative structure.html">2. الهيكل الإداري</a>
+            <a href="Theoretical framework.html">3. الإطار النظري</a>
+            <a href="Infrastructure.html">4. البنية التحتية</a>
+            <a href="physical connections.html" class="active">5. التوصيلات الفيزيائية</a>
+            <a href="Logical design.html">6. التصميم المنطقي</a>
+            <a href="Software implementation.html">7. التنفيذ البرمجي</a>
+            <a href="Service infrastructure.html">8. البنية التحتية للخدمات</a>
+            <a href="Operational test.html">9. الاختبار التشغيلي</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content full-width">
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle-container">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+
+            <!-- Documentation Content -->
+            <article class="documentation">
+                <div id="docContent">
+
+                    <h1>5. دليل التوصيلات الفيزيائية وهندسة الكابلات (Cabling & Wiring Guide)</h1>
+
+                    <p>يعتمد استقرار الشبكة على دقة التوصيلات واستخدام أنواع الكابلات المناسبة لكل دور وظيفي. تتبع
+                        التوصيلات القاعدة القياسية: الكابل المستقيم (Through-Straight) للأجهزة المختلفة، والكابل
+                        المتقاطع (Over-Cross) للأجهزة المتشابهة.</p>
+
+                    <h2>5.1 منطقة الحافة والأمن (Edge & Security Zone)</h2>
+
+                    <p>هذه المنطقة هي المسؤولة عن الربط مع مزود خدمة الإنترنت وتأمين الدخول للشبكة.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الجهاز من</th>
+                                <th>المنفذ</th>
+                                <th>الجهاز إلى</th>
+                                <th>المنفذ</th>
+                                <th>نوع الكابل</th>
+                                <th>الغرض التقني</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ISP Router</td>
+                                <td>Gi0/0/0</td>
+                                <td>Outside-SW</td>
+                                <td>Fa0/1</td>
+                                <td>Straight</td>
+                                <td>وصلة الإنترنت الرئيسية القادمة من المزود.</td>
+                            </tr>
+                            <tr>
+                                <td>Outside SW</td>
+                                <td>Fa0/2</td>
+                                <td>ASA-1 (Active)</td>
+                                <td>Gi1/1</td>
+                                <td>Straight</td>
+                                <td>المسار الرئيسي لحركة المرور الخارجية.</td>
+                            </tr>
+                            <tr>
+                                <td>Outside SW</td>
+                                <td>Fa0/3</td>
+                                <td>ASA-2 (Standby)</td>
+                                <td>Gi1/1</td>
+                                <td>Straight</td>
+                                <td>المسار الاحتياطي لحركة المرور الخارجية.</td>
+                            </tr>
+                            <tr>
+                                <td>ASA-1</td>
+                                <td>Gi1/3</td>
+                                <td>ASA-2</td>
+                                <td>Gi1/3</td>
+                                <td>Cross Over</td>
+                                <td>رابط الفشل (Failover Link) لنقل الحالة والمزامنة.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>5.2 منطقة القلب والتوزيع (Core & Distribution Zone)</h2>
+
+                    <p>تعتمد هذه المنطقة على روابط Gigabit عالية السرعة وتقنية EtherChannel لضمان التكرار.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الجهاز من</th>
+                                <th>المنفذ</th>
+                                <th>الجهاز إلى</th>
+                                <th>المنفذ</th>
+                                <th>نوع الكابل</th>
+                                <th>الغرض / التقنية</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ASA-1</td>
+                                <td>Gi1/2</td>
+                                <td>Core SW1</td>
+                                <td>Gi1/0/24</td>
+                                <td>Straight</td>
+                                <td>ربط الشبكة الداخلية (Inside) بالنواة.</td>
+                            </tr>
+                            <tr>
+                                <td>ASA-2</td>
+                                <td>Gi1/2</td>
+                                <td>Core SW2</td>
+                                <td>Gi1/0/24</td>
+                                <td>Straight</td>
+                                <td>ربط المسار الاحتياطي للشبكة الداخلية.</td>
+                            </tr>
+                            <tr>
+                                <td>Core SW1</td>
+                                <td>Gi1/0/1+2</td>
+                                <td>Core SW2</td>
+                                <td>Gi1/0/1+2</td>
+                                <td>Cross Over</td>
+                                <td>EtherChannel (Peer Link) بين محولي النواة.</td>
+                            </tr>
+                            <tr>
+                                <td>Core SW1</td>
+                                <td>Gi1/0/3+4</td>
+                                <td>Dist SW1</td>
+                                <td>Gi1/0/1+2</td>
+                                <td>Cross Over</td>
+                                <td>رابط صاعد (Uplink 1) لطبقة التوزيع.</td>
+                            </tr>
+                            <tr>
+                                <td>Core SW2</td>
+                                <td>Gi1/0/3+4</td>
+                                <td>Dist SW2</td>
+                                <td>Gi1/0/1+2</td>
+                                <td>Cross Over</td>
+                                <td>رابط صاعد (Uplink 2) لطبقة التوزيع.</td>
+                            </tr>
+                            <tr>
+                                <td>Dist SW1</td>
+                                <td>Gi1/0/23+24</td>
+                                <td>Dist SW2</td>
+                                <td>Gi1/0/23+24</td>
+                                <td>Cross Over</td>
+                                <td>رابط تكرار HSRP لضمان مزامنة البوابات.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>5.3 طبقة الوصول والربط الطرفي (Access Layer Connectivity)</h2>
+
+                    <p>تركز هذه الطبقة على ربط المستخدمين والخدمات المتخصصة بمحولات التوزيع.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الجهاز من</th>
+                                <th>المنفذ</th>
+                                <th>الجهاز إلى</th>
+                                <th>المنفذ</th>
+                                <th>نوع الكابل</th>
+                                <th>الملاحظات التقنية</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dist-SW1</td>
+                                <td>Gi1/0/10</td>
+                                <td>WLC 2504</td>
+                                <td>Gi1</td>
+                                <td>Straight</td>
+                                <td>يجب إعداد المنفذ كـTrunk لنقل شبكات الإدارة.</td>
+                            </tr>
+                            <tr>
+                                <td>Dist-SW1</td>
+                                <td>Gi1/0/11</td>
+                                <td>CME Router</td>
+                                <td>Gi0/0</td>
+                                <td>Straight</td>
+                                <td>يجب إعداد المنفذ كـAccess وتخصيصه لـVLAN 20.</td>
+                            </tr>
+                            <tr>
+                                <td>Access SW</td>
+                                <td>Gi0/1+2</td>
+                                <td>Dist SW1</td>
+                                <td>Gi1/0/5+6</td>
+                                <td>Cross Over</td>
+                                <td>رابط تجميع (L2 EtherChannel) لضمان السرعة.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="navigation-buttons">
+                        <a href="Infrastructure.html" class="nav-btn prev">← البنية التحتية</a>
+                        <a href="Logical design.html" class="nav-btn next">التصميم المنطقي →</a>
+                    </div>
+
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

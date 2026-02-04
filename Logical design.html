@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التصميم المنطقي - Turning Point</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="project-title">Turning Point</h1>
+            <p class="project-subtitle">Zero Down Network & Service</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="Executive Summary.html">1. الملخص التنفيذي</a>
+            <a href="Administrative structure.html">2. الهيكل الإداري</a>
+            <a href="Theoretical framework.html">3. الإطار النظري</a>
+            <a href="Infrastructure.html">4. البنية التحتية</a>
+            <a href="physical connections.html">5. التوصيلات الفيزيائية</a>
+            <a href="Logical design.html" class="active">6. التصميم المنطقي</a>
+            <a href="Software implementation.html">7. التنفيذ البرمجي</a>
+            <a href="Service infrastructure.html">8. البنية التحتية للخدمات</a>
+            <a href="Operational test.html">9. الاختبار التشغيلي</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content full-width">
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle-container">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+
+            <!-- Documentation Content -->
+            <article class="documentation">
+                <div id="docContent">
+
+                    <h1>6. التصميم المنطقي وهيكلة العنونة والشبكات الظاهرية (VLANs & IP Scheme)</h1>
+
+                    <p>تم تصميم الهيكل المنطقي للشبكة لضمان العزل التام بين الإدارات وتحسين كفاءة التوجيه.</p>
+
+                    <h2>6.1 مخطط الشبكات الظاهرية (VLAN Structure)</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>رقم الـVLAN</th>
+                                <th>الاسم الوصفي</th>
+                                <th>النطاق الشبكي (Subnet)</th>
+                                <th>بوابة HSRP (Virtual IP)</th>
+                                <th>الوظيفة المحددة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>DATA_Sales</td>
+                                <td>10.1.10.0/24</td>
+                                <td>10.1.10.1</td>
+                                <td>أجهزة موظفي المبيعات والبيانات العامة.</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>VOICE_VoIP</td>
+                                <td>10.1.20.0/24</td>
+                                <td>10.1.20.1</td>
+                                <td>حركة مرور الصوت وهواتف IP سيسكو.</td>
+                            </tr>
+                            <tr>
+                                <td>37</td>
+                                <td>SERVERS_DC</td>
+                                <td>10.1.37.0/24</td>
+                                <td>10.1.37.1</td>
+                                <td>الخوادم المركزية (DNS, Web, Email, DB).</td>
+                            </tr>
+                            <tr>
+                                <td>70</td>
+                                <td>WIRELESS_User</td>
+                                <td>10.1.70.0/24</td>
+                                <td>10.1.70.1</td>
+                                <td>مستخدمي الشبكة اللاسلكية والضيوف.</td>
+                            </tr>
+                            <tr>
+                                <td>90</td>
+                                <td>Eng_Data</td>
+                                <td>10.1.90.0/24</td>
+                                <td>10.1.90.1</td>
+                                <td>أجهزة القسم الهندسي والبيانات التقنية.</td>
+                            </tr>
+                            <tr>
+                                <td>99</td>
+                                <td>MGMT_Native</td>
+                                <td>10.1.99.0/24</td>
+                                <td>10.1.99.1</td>
+                                <td>إدارة أجهزة الشبكة (VLAN المحايدة).</td>
+                            </tr>
+                            <tr>
+                                <td>200</td>
+                                <td>ISP_Edge</td>
+                                <td>209.165.200.224/29</td>
+                                <td>209.165.200.225</td>
+                                <td>شبكة الربط الخارجي (Public Subnet).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>6.2 مصفوفة الروابط البينية للنقاط (Point-to-Point Connectivity Matrix)</h2>
+
+                    <p>تستخدم هذه الروابط لنقل البيانات بين طبقات الشبكة المختلفة باستخدام عناوين /30 لتوفير النطاق.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>اسم الرابط (Link Name)</th>
+                                <th>الجهاز الأول (IP)</th>
+                                <th>الجهاز الثاني (IP)</th>
+                                <th>الشبكة الفرعية</th>
+                                <th>نوع التوجيه</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ASA to Core</td>
+                                <td>172.16.0.1 (ASA VIP)</td>
+                                <td>172.16.0.3 (Core VIP)</td>
+                                <td>172.16.0.0/29</td>
+                                <td>Static/OSPF</td>
+                            </tr>
+                            <tr>
+                                <td>Core1 to Core2</td>
+                                <td>10.255.0.21</td>
+                                <td>10.255.0.22</td>
+                                <td>10.255.0.20/30</td>
+                                <td>OSPF Area 0</td>
+                            </tr>
+                            <tr>
+                                <td>Core1 to Dist1</td>
+                                <td>10.255.0.5</td>
+                                <td>10.255.0.6</td>
+                                <td>10.255.0.4/30</td>
+                                <td>OSPF Area 0</td>
+                            </tr>
+                            <tr>
+                                <td>Core2 to Dist1</td>
+                                <td>10.255.0.13</td>
+                                <td>10.255.0.14</td>
+                                <td>10.255.0.12/30</td>
+                                <td>OSPF Area 0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>6.3 توثيق الأنظمة والخدمات الطرفية (End-System Documentation)</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الجهاز الطرفي</th>
+                                <th>الشبكة (VLAN)</th>
+                                <th>عنوان الـIP</th>
+                                <th>البوابة (Gateway)</th>
+                                <th>الدور / الوظيفة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Server-DC</td>
+                                <td>37</td>
+                                <td>10.1.37.10</td>
+                                <td>10.1.37.1</td>
+                                <td>DNS, Web, Email Services.</td>
+                            </tr>
+                            <tr>
+                                <td>WLC 2504</td>
+                                <td>99</td>
+                                <td>10.1.99.254</td>
+                                <td>10.1.99.1</td>
+                                <td>Wireless Management Controller.</td>
+                            </tr>
+                            <tr>
+                                <td>CME Router</td>
+                                <td>20</td>
+                                <td>10.1.20.254</td>
+                                <td>10.1.20.1</td>
+                                <td>VoIP Telephony Gateway.</td>
+                            </tr>
+                            <tr>
+                                <td>Access Points</td>
+                                <td>99</td>
+                                <td>DHCP</td>
+                                <td>10.1.99.1</td>
+                                <td>Wireless Connectivity.</td>
+                            </tr>
+                            <tr>
+                                <td>Admin PC</td>
+                                <td>10</td>
+                                <td>10.1.10.100</td>
+                                <td>10.1.10.1</td>
+                                <td>Network Management Station.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="navigation-buttons">
+                        <a href="physical connections.html" class="nav-btn prev">← التوصيلات الفيزيائية</a>
+                        <a href="Software implementation.html" class="nav-btn next">التنفيذ البرمجي →</a>
+                    </div>
+
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

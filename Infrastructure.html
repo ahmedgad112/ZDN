@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البنية التحتية المادية - Turning Point</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="project-title">Turning Point</h1>
+            <p class="project-subtitle">Zero Down Network & Service</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="Executive Summary.html">1. الملخص التنفيذي</a>
+            <a href="Administrative structure.html">2. الهيكل الإداري</a>
+            <a href="Theoretical framework.html">3. الإطار النظري</a>
+            <a href="Infrastructure.html" class="active">4. البنية التحتية</a>
+            <a href="physical connections.html">5. التوصيلات الفيزيائية</a>
+            <a href="Logical design.html">6. التصميم المنطقي</a>
+            <a href="Software implementation.html">7. التنفيذ البرمجي</a>
+            <a href="Service infrastructure.html">8. البنية التحتية للخدمات</a>
+            <a href="Operational test.html">9. الاختبار التشغيلي</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content full-width">
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle-container">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+
+            <!-- Documentation Content -->
+            <article class="documentation">
+                <div id="docContent">
+                    
+<h1>4. البنية التحتية المادية وتوصيف المعدات (Bill of Materials)</h1>
+
+<p>تم اختيار عتاد الشبكة بعناية فائقة لدعم التقنيات المذكورة، مع تحديث طرازات المحولات لضمان التوافق التام مع متطلبات الأداء العالي.</p>
+
+<table>
+<thead>
+<tr>
+<th>الدور الوظيفي</th>
+<th>طراز الجهاز (Cisco Model)</th>
+<th>الكمية</th>
+<th>الملاحظات التقنية ومبررات الاختيار</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edge Firewall</td>
+<td>ASA 5506-X</td>
+<td>2</td>
+<td>دعم ميزة Active/Standby Failover وإدارة الحافة الأمنية.</td>
+</tr>
+<tr>
+<td>Outside Switch</td>
+<td>Catalyst 2960</td>
+<td>1</td>
+<td>ربط راوتر مزود الخدمة (ISP) بجداري الحماية لتوزيع الحمل.</td>
+</tr>
+<tr>
+<td>Core Switch</td>
+<td>Catalyst 3650-24PS</td>
+<td>2</td>
+<td>العمود الفقري للشبكة، يدعم توجيه الطبقة الثالثة وسرعات Gigabit.</td>
+</tr>
+<tr>
+<td>Distribution Switch</td>
+<td>Catalyst 3650-24PS</td>
+<td>2</td>
+<td>لضمان استقرار الأداء ودعم HSRP المتقدم.</td>
+</tr>
+<tr>
+<td>Access Switch</td>
+<td>Catalyst 2960-24TT</td>
+<td>4</td>
+<td>توفير منافذ الوصول للمستخدمين مع ميزات QoS و Port Security.</td>
+</tr>
+<tr>
+<td>ISP Router</td>
+<td>ISR 4331</td>
+<td>1</td>
+<td>محاكاة بوابة الإنترنت الخارجية والربط مع العالم الخارجي.</td>
+</tr>
+<tr>
+<td>Wireless Controller</td>
+<td>Cisco 2504 WLC</td>
+<td>1</td>
+<td>الإدارة المركزية لنقاط الوصول اللاسلكية.</td>
+</tr>
+<tr>
+<td>Voice Gateway</td>
+<td>Router 2911/2811</td>
+<td>1</td>
+<td>تشغيل خدمات CME لإدارة المكالمات الصوتية داخل المؤسسة.</td>
+</tr>
+<tr>
+<td>Access Points</td>
+<td>LAP-PT</td>
+<td>4</td>
+<td>نقاط وصول خفيفة تعمل تحت إدارة الـWLC لتغطية المساحات اللاسلكية.</td>
+</tr>
+<tr>
+<td>Servers</td>
+<td>Server-PT</td>
+<td>3</td>
+<td>مخصصة لخدمات مركز البيانات (DNS, DHCP, Web, Email).</td>
+</tr>
+</tbody>
+</table>
+
+<div class="navigation-buttons">
+    <a href="Theoretical framework.html" class="nav-btn prev">← الإطار النظري</a>
+    <a href="physical connections.html" class="nav-btn next">التوصيلات الفيزيائية →</a>
+</div>
+
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,575 @@
+SUPER STRICT AI PROMPT – WEB DOCUMENTATION RENDERING
+FOR: Cursor / Claude
+OUTPUT FORMAT: HTML + CSS + JS
+==================================================
+
+CRITICAL INSTRUCTION (NON-NEGOTIABLE)
+------------------------------------
+You MUST render the documentation EXACTLY as provided.
+This task is NOT about design only.
+This task is about FULL DOCUMENTATION INCLUSION.
+
+❌ DO NOT summarize
+❌ DO NOT paraphrase
+❌ DO NOT omit
+❌ DO NOT translate
+❌ DO NOT fix language
+❌ DO NOT replace text with placeholders
+❌ DO NOT reference the document externally
+
+If ANY character is missing → THE OUTPUT IS INVALID.
+
+--------------------------------------------------
+
+OBJECTIVE
+---------
+Generate a complete, production-ready website using:
+- HTML
+- CSS
+- Vanilla JavaScript
+
+The website MUST visibly contain the FULL documentation text.
+
+--------------------------------------------------
+
+MANDATORY CONTENT RULE
+----------------------
+Every single word from the documentation MUST appear inside the HTML file.
+
+The documentation MUST:
+- Be visible on screen
+- Be wrapped only with HTML tags
+- Remain 100% identical to the original text
+
+NO EXCEPTIONS.
+
+--------------------------------------------------
+
+STRUCTURE REQUIREMENTS
+----------------------
+Files to generate:
+1. index.html
+2. style.css
+3. script.js
+
+index.html MUST contain:
+- Header with project title
+- Sidebar navigation
+- <main> containing FULL documentation
+- <section> for each heading
+- <pre><code> for all configurations
+- <table> for all tabular data
+
+--------------------------------------------------
+
+VERIFICATION STEP (MANDATORY)
+-----------------------------
+Before responding, you MUST:
+1. Compare the HTML text against the original documentation
+2. Confirm NO missing lines
+3. Confirm NO modified characters
+4. Confirm ALL sections are visible
+
+If verification fails → REGENERATE.
+
+--------------------------------------------------
+
+FAILURE CONDITIONS
+------------------
+The response is considered FAILED if:
+- Documentation is incomplete
+- Any text is missing
+- Any text is rewritten
+- Any section is empty
+
+--------------------------------------------------
+
+DOCUMENTATION (PASTE EXACTLY BELOW)
+----------------------------------
+PASTE THE FULL DOCUMENTATION HERE
+WORD-FOR-WORD
+CHARACTER-FOR-CHARACTER
+NO CHANGES ALLOWED
+
+
+ THE TEXT BELOW IS IMMUTABLE.
+DO NOT TOUCH IT. DO NOT ANALYZE IT.
+
+ Zero Down Network  & Service 
+"We are not just building a network that doesn't fall; 
+we are building a service that never stops." 
+ تايوتحملا سرهف 
+1 .  ةيجيتارتسلاا فادهلأاو عورشملل يذيفنتلا صخلملا 
+2 .  قيرف( ةينقتلا ماهملا عيزوتو يرادلإا لكيهلا Turning Point ) 
+3 . ةيلاعلا ةيرفاوتلا ةسدنهل ةيملعلا سسلأاو يرظنلا راطلإا 
+o 3.1  ( ءادلأا سيياقمو ةيرفاوتلا ةلداعم MTBF   & MTTR ) 
+o 3.2 ( تاقبطلا يثلاث يمرهلا جذومنلا Three-Tier Hierarchical Model ) 
+o 3.3 ( يئاقلتلا يفاعتلاو راركتلا تلاوكوتورب Redundancy Protocols ) 
+4 . لا فيصوتو ةيداملا ةيتحتلا ةينبلا معدا ت ( Bill of Materials ) 
+5 . ( تلاباكلا ةسدنهو ةيئايزيفلا تلايصوتلا ليلد Cabling   & Wiring Guide ) 
+o 5.1 ( نملأاو ةفاحلا ةقطنم Edge   & Security Zone ) 
+o 5.2 ( عيزوتلاو بلقلا ةقطنم Core  & Distribution Zone ) 
+o 5.3 ( يفرطلا طبرلاو لوصولا ةقبط Access Layer Connectivity ) 
+6 .  ( ةيرهاظلا تاكبشلاو ةنونعلا ةلكيهو يقطنملا ميمصتلا VLANs  & IP Scheme ) 
+o 6.1  ( ةيرهاظلا تاكبشلا ططخم VLAN Structure ) 
+o 6.2  ( طاقنلل ةينيبلا طباورلا ةفوفصم Point-to-Point Connectivity Matrix ) 
+o 6.3 ( ةيفرطلا تامدخلاو ةمظنلأا قيثوت End-System Documentation ) 
+7 . ( ةكبشلا ةزهجأ تادادعإو يجمربلا ذيفنتلا Configuration Scripts ) 
+o 7.1  ( تنرتنلإا رتوار ةجمرب ISP Router ةفاحلا لوحمو ) 
+o 7.2 ( ةيامحلا ناردج ةجمرب ASA Firewall Failover ) 
+o 7.3  ( ةاونلا ةقبط ةجمرب Core Switches هيجوتلا تايلمعو ) 
+o 7.4 ( عيزوتلا ةقبط ةجمرب Distribution Switches تاباوبو ) HSRP 
+o 7.5 ( لوصولا ةقبط ةجمرب Access Switches ذفانملا نمأو ) 
+o 7.6  ( ةيزكرملا تامدخلا تادادعإ DHCP  & VoIP  & Wireless )
+8 . ( تامدخلل ةيتحتلا ةينبلا ةسدنه Service Infrastructure ) 
+o 8.1 ( ةيضارتفلاا ةبسوحلا ةقبط Proxmox VE Cluster ) 
+o 8.2 ( عزوملا نيزختلا ةقبط Ceph Storage SDS ) 
+o 8.3 ( تايواحلا قيسنت ةقبط Docker Swarm Orchestration ) 
+9 . ( يليغشتلا رابتخلااو ققحتلا تاهويرانيس Verification Scenarios )
+---------------------------------------------------------------------------------------------------
+1 ةيجيتارتسلاا فادهلأاو عورشملل يذيفنتلا صخلملا . 
+ "فقوتلا ةرتف مادعنا" أدبم دمتعت ةيسسؤم ةيمقر ةيتحت ةينب ءانبل ًلاماكتم ً ايذيفنتو ً ايجيتارتسا ً اططخم عورشملا اذه لثمُي
+( Zero Down Network ةمدقتملا ةاكاحملا ةئيب نمض ةقدب اهقيثوتو اهميمصت مت ثيح ،) Cisco Packet Tracer  .
+ ةدرفنملا لشفلا طاقن ىلع ماتلا ءاضقلا للاخ نم لامعلأا ةيرارمتسا هجاوت يتلا ةجرحلا تايدحتلا ةجلاعم ىلإ عورشملا فدهي
+( Single Points of Failure .تامدخلاو ةكبشلا تايوتسم ةفاك ربع ) 
+ ( "تاعست سمخلا" رايعم قيقحت ىلع ميمصتلا اذهل ةيسدنهلا ةفسلفلا دمتعت 99.999 % Uptime  صيلقت ينعي ام وهو ،)
+ ةزهجلأل يئايزيفلا راركتلا تاينقت جمد للاخ نم كلذ قيقحت متي .طقف ةدودعم قئاقد ىلإ ةيونسلا عاطقنلاا تارتف
+( Hardware Redundancy ( يظحللا يللآا ليوحتلا تلاوكوتورب عم ) Sub-second convergence  نمضت يتلا )
+ ةيتحتلا ةينبلا نم ً اءدب بناوجلا ةفاك ريرقتلا يطغي عاطقنا يأب يئاهنلا مدختسملا روعش نود تامدخلاو تانايبلا ةكرح لاقتنا
+.ةيجمربلا تايواحلا قيسنتو ةعزوملا ةمظنلأا ىلإ ًلاوصو ةيداملا
+-----------------------------------------------------------------------------------------------------
+2 قيرف( ةينقتلا ماهملا عيزوتو يرادلإا لكيهلا . Turning Point ) 
+ " ىمسم تحت صصختم يسدنه لمع قيرف ةطساوب عورشملا ذيفنت مت Turning Point نم نوكتي ،" 13   مت ثيح ،ً اينقت ً اريبخو ً اسدنهم
+ جذومن تاقبط ةفاك ةيطغت نامضل راودلأا عيزوت OSI  .عبسلا 
+م لاا مس  سولجلا مقر  ةيفيظولا ةيلوؤسملاو ينقتلا رودلا 
+1  عدج ميهاربإ حلاص ميهاربإ 2220103  ( قيرفلا دئاق Team Leader ةمظنلأل يلكلا لماكتلا لوؤسمو ) 
+2  بيرغ دمحم اللهدبع 2220271 ( ةبسوحلا ةمظنأ ريدم Proxmox ( عزوملا نيزختلاو ) Ceph ) 
+3  دمحم يزمر اضر دومحم 2220431 ( ةيامحلا ناردج ةرادإو تاكبشلا نمأ لوؤسم ASA Security ) 
+4  يلع رصان ديلو راثيإ 2220093  ـلا ةنونعو ةيقطنملا تاكبشلا طيطخت IP    ـلاو VLANs 
+5  نسح دمحم حلاص دمحم ةيآ 2220092  ةيعجرملا ةينقتلا ثوحبلاو ينفلا قيثوتلا ةلوؤسم 
+6  يطاعملا وبأ يملح فرشأ دمحم 2220354 ( ةاونلا ةقبط ريبخ Core Layer Specialist هيجوتلا ةسدنهو ) 
+7 نامثع دمحم مسيم 2220495  ( تايواحلا تامدخ Docker Swarm تاقيبطتلا قيسنتو ) 
+8  داوع ىفطصم للاب مير 2220174 ( ةدحوملا تلااصتلاا ةمظنأ ةلوؤسم VoIP ـلا ةجمربو ) CME 
+9  ةدامح سنأ دمحم نازر 2220162  ةزهجأ ةرادإو ةيكلسلالا تاكبشلا ةريبخ WLC  و APs 
+10  دمحم دوصقملا دبع باهيإ دمحأ 2220013  لوصولاو عيزوتلا يتقبط تلاوحم ةجمربو نيوكت 
+11  بيبح هلخ ينامور سوينوطنأ 2220090 ( لشفلا تاهويرانيس رابتخاو ءادلأا ةبقارم لوؤسم HA Testing ) 
+12 هدبع دمحم دعسم نيرباص 2220222  يداملا داتعلا زيهجتو ةينفلا تايتسجوللا معد 
+13  فراع تزع افص 2220224 ةيسدنهلا ريياعملل لاثتملااو ةدوجلا ةرادإ ةلوؤسم 
+---------------------------------------------------------------------------------------------------------
+3 ةيلاعلا ةيرفاوتلا ةسدنهل ةيملعلا سسلأاو يرظنلا راطلإا . 
+" ةكبش ميمصت قلطني Zero Down  رداق يكيمانيد ماظن ىلإ يكيتاتسا ماظن نم ةيتحتلا ةينبلا ليوحت ىلإ فدهت ةنيصر ةيملع سسأ نم "
+ .يتاذلا ءافشلا ىلع 
+ 
+3.1 ( ءادلأا سيياقمو ةيرفاوتلا ةلداعم MTBF   & MTTR ) 
+( يلاعلا رفاوتلا فرعُي High Availability  بسحُتو .فقوت نود ةليوط ةينمز تارتفل ةيلاعفب لمعلا ىلع ماظنلا ةردق هنأب ً ايملع )
+( ةيرفاوتلا A ( لاطعلأا نيب تقولا طسوتم نيب ةقلاعلا للاخ نم ) MTBF ( حلاصلإل مزلالا تقولا طسوتمو ) MTTR  اذه ىعسي .)
+ ليلقتل عورشملا MTTR ( ةميق عفري امم ،يللآا ليدبتلاو ةتمتلأا للاخ نم ً ابيرقت رفصلا ىلإ A . ً ايرظن ىصقلأا دحلا ىلإ لصتل ) 
+ 
+3.2 ( تاقبطلا يثلاث يمرهلا جذومنلا Three-Tier Hierarchical Model ) 
+( عسوتلل ةيلباقلا نامضل يمرهلا وكسيس جذومن ىلع ميمصتلا دمتعي Scalability ( ءادلأاو ) Performance :) 
+• ( ةاونلا ةقبط Core Layer :)  متي لا .ةنكمم ةعرس ىصقأب تانايبلا لقن يه ةديحولا اهتمهمو ،ةكبشلل يرقفلا دومعلا لثمت
+( ريخأت نمز لقأ نامضل انه ةدقعم تاسايس يأ قيبطت Latency .) 
+• ( عيزوتلا ةقبط Distribution Layer :) ( ةيرهاظلا تاكبشلا نيب هيجوتلا متي ثيح ،ةكبشلا لقع يه Inter-VLAN 
+Routing ( لوصولاب مكحتلا دعاوق قيبطتو ) ACLs ( راركتلا تلاوكوتوربو ) HSRP .) 
+• ( لوصولا ةقبط Access Layer :)  ( يفرطلا ناملأا تازيم رفوتو ،ةكبشلاب نيمدختسملا لاصتا ةطقن لثمت Port 
+Security ( تانايبلا فينصتو ) QoS .ويديفلاو توصلا ةدوج نامضل ) 
+ 
+ 
+3.3 ( يئاقلتلا يفاعتلاو راركتلا تلاوكوتورب Redundancy Protocols ) 
+:مغانتب لمعت تلاوكوتورب ةدع جمد مت ،فقوتلا ةرتف مادعنا نامضل 
+1 .  لوكوتورب HSRP :   ناكم لولحلل ضعبلا امهضعب ةلاح نلاوحم بقاري ثيح ،نيمدختسملل ةرركتم ةيضارتفا ةباوب رفوي
+ .ً اروف لطعتملا لوحملا 
+ 
+2 .   ةينقت EtherChannel :   تاراسم رفويو قاطنلا ةعس ديزي امم ،دحاو يقطنم طبار يف ةددعتملا ةيئايزيفلا طباورلا جمدت
+ .تلاباكلا عاطقنا لاح يف ةليدب 
+3 . Stateful Failover :  ةيامحلا ناردجب ةصاخ ةزيم ASA   تاسلج عاطقنا عنمي امم ،ةطشنلا لاصتلاا لوادج ةنمازم نمضت
+ .يساسلأا يرانلا رادجلا لطعت دنع ةيراجلا تاملاكملا وأ بيولا
+4 فيصوتو ةيداملا ةيتحتلا ةينبلا . لام عدا ت ( Bill of Materials ) 
+  ءادلأا تابلطتم عم ماتلا قفاوتلا نامضل تلاوحملا تازارط ثيدحت عم ،ةروكذملا تاينقتلا معديل ةقئاف ةيانعب ةكبشلا داتع رايتخا مت
+.يلاعلا 
+ يفيظولا رودلا ( زاهجلا زارط Cisco 
+Model ) 
+ ةيمكلا رايتخلاا تارربمو ةينفلا تاظحلاملا 
+Edge Firewall ASA 5506-X 2  ةزيم معد Active/Standby Failover    ةفاحلا ةرادإو
+.ةينملأا 
+Outside Switch Catalyst 2960 1 ( ةمدخلا دوزم رتوار طبر ISP عيزوتل ةيامحلا يرادجب )
+ .لمحلا 
+Core Switch Catalyst 3650-24PS 2   تاعرسو ةثلاثلا ةقبطلا هيجوت معدي ،ةكبشلل يرقفلا دومعلا
+Gigabit . 
+Distribution 
+Switch 
+Catalyst 3650-24PS 2  معدو ءادلأا رارقتسا نامضل HSRP  .مدقتملا 
+Access Switch Catalyst 2960-24TT 4  تازيم عم نيمدختسملل لوصولا ذفانم ريفوت QoS   و
+Port Security . 
+ISP Router ISR 4331 1   ملاعلا عم طبرلاو ةيجراخلا تنرتنلإا ةباوب ةاكاحم
+ .يجراخلا 
+Wireless 
+Controller 
+Cisco 2504 WLC 1  .ةيكلسلالا لوصولا طاقنل ةيزكرملا ةرادلإا 
+Voice Gateway Router 2911/2811 1   تامدخ ليغشت CME   لخاد ةيتوصلا تاملاكملا ةرادلإ
+ .ةسسؤملا 
+Access Points LAP-PT 4  ـلا ةرادإ تحت لمعت ةفيفخ لوصو طاقن WLC   ةيطغتل
+ .ةيكلسلالا تاحاسملا 
+s Server-PT 3  ( تانايبلا زكرم تامدخل ةصصخم DNS, DHCP, 
+Web, Email .) 
+
+5 ( تلاباكلا ةسدنهو ةيئايزيفلا تلايصوتلا ليلد . Cabling   & Wiring Guide ) 
+ باكلا :ةيسايقلا ةدعاقلا تلايصوتلا عبتت .يفيظو رود لكل ةبسانملا تلاباكلا عاونأ مادختساو تلايصوتلا ةقد ىلع ةكبشلا رارقتسا دمتعي  ل
+( ميقتسملا Through-Straight ( عطاقتملا لباكلاو ،ةفلتخملا ةزهجلأل ) Over-Cross .ةه
+1  ( نملأاو ةفاحلا ةقطنم Edge  & Security Zone ) 
+ .ةكبشلل لوخدلا نيمأتو تنرتنلإا ةمدخ دوزم عم طبرلا نع ةلوؤسملا يه ةقطنملا هذه 
+ 
+ زاهجلا نم  ذفنملا  زاهجلا ىلإ  ذفنملا  لباكلا عون  ينقتلا ضرغلا 
+ISP Router Gi0/0/0 Outside-SW Fa0/1 Straight   نم ةمداقلا ةيسيئرلا تنرتنلإا ةلصو
+ .دوزملا 
+Outside
+SW 
+Fa0/2 ASA-1 
+(Active) 
+Gi1/1 Straight   رورملا ةكرحل يسيئرلا راسملا
+ .ةيجراخلا 
+Outside
+SW 
+Fa0/3 ASA-2 
+(Standby) 
+Gi1/1 Straight   رورملا ةكرحل يطايتحلاا راسملا
+ .ةيجراخلا 
+ASA-1 Gi1/3 ASA-2 Gi1/3 Cross
+Over 
+( لشفلا طبار Failover Link  لقنل )
+ .ةنمازملاو ةلاحلا
+2 ( عيزوتلاو بلقلا ةقطنم Core  & Distribution Zone ) 
+ طباور ىلع ةقطنملا هذه دمتعت Gigabit  ةينقتو ةعرسلا ةيلاع EtherChannel  .راركتلا نامضل 
+ زاهجلا نم  ذفنملا  زاهجلا ىلإ  ذفنملا  لباكلا عون  ضرغلا / ةينقتلا 
+ASA-1 Gi1/2 Core
+SW1 
+Gi1/0/24 Straight ( ةيلخادلا ةكبشلا طبر Inside  )
+.ةاونلاب 
+ASA-2 Gi1/2 Core
+SW2 
+Gi1/0/24 Straight   ةكبشلل يطايتحلاا راسملا طبر
+ .ةيلخادلا 
+Core
+SW1 
+Gi1/0/1+2 Core
+SW2 
+Gi1/0/1+2 Cross
+Over 
+EtherChannel (Peer Link)  
+ .ةاونلا يلوحم نيب 
+Core
+SW1 
+Gi1/0/3+4 Dist
+SW1 
+Gi1/0/1+2 Cross
+Over 
+ ( دعاص طبار Uplink 1  ةقبطل )
+.عيزوتلا 
+Core
+SW2 
+Gi1/0/3+4 Dist
+SW2 
+Gi1/0/1+2 Cross
+Over 
+ ( دعاص طبار Uplink 2  ةقبطل )
+.عيزوتلا 
+Dist
+SW1 
+Gi1/0/23+24 Dist
+SW2 
+Gi1/0/23+24 Cross
+Over 
+  راركت طبار HSRP   نامضل
+ .تاباوبلا ةنمازم 
+5.3 ( يفرطلا طبرلاو لوصولا ةقبط Access Layer Connectivity ) 
+ .عيزوتلا تلاوحمب ةصصختملا تامدخلاو نيمدختسملا طبر ىلع ةقبطلا هذه زكرت 
+ زاهجلا نم  ذفنملا  زاهجلا ىلإ  ذفنملا  لباكلا عون  ةينفلا تاظحلاملا 
+Dist-SW1 Gi1/0/10 WLC 
+2504 
+Gi1 Straight  ـك ذفنملا دادعإ بجي Trunk   لقنل
+.ةرادلإا تاكبش 1 
+Dist-SW1 Gi1/0/11 CME 
+Router 
+Gi0/0 Straight  ـك ذفنملا دادعإ بجي Access  
+ ـل هصيصختو VLAN 20 .1
+Access
+SW 
+Gi0/1+2 Dist
+SW1 
+Gi1/0/5+6 Cross
+Over 
+ ( عيمجت طبار L2 EtherChannel  )
+ .ةعرسلا نامضل 
+6 ( ةيرهاظلا تاكبشلاو ةنونعلا ةلكيهو يقطنملا ميمصتلا . VLANs   & IP Scheme ) 
+.هيجوتلا ةءافك نيسحتو تارادلإا نيب ماتلا لزعلا نامضل ةكبشلل يقطنملا لكيهلا ميمصت مت 1 
+6.1 ( ةيرهاظلا تاكبشلا ططخم VLAN Structure ) 
+  ـلا مقر
+VLAN 
+ يفصولا مسلاا ( يكبشلا قاطنلا Subnet )   ةباوب HSRP 
+(Virtual IP) 
+ ةددحملا ةفيظولا 
+10 DATA_Sales 10.1.10.0/24 10.1.10.1   تاعيبملا يفظوم ةزهجأ
+ .ةماعلا تانايبلاو 
+20 VOICE_VoIP 10.1.20.0/24 10.1.20.1   توصلا رورم ةكرح
+  فتاوهو IP  .وكسيس 
+37 SERVERS_DC 10.1.37.0/24 10.1.37.1   ةيزكرملا مداوخلا
+( DNS, Web, 
+Email, DB .) 
+70 WIRELESS_User 10.1.70.0/24 10.1.70.1   ةكبشلا يمدختسم
+ .فويضلاو ةيكلسلالا 
+90 Eng_Data 10.1.90.0/24 10.1.90.1   يسدنهلا مسقلا ةزهجأ
+.ةينقتلا تانايبلاو 
+99 MGMT_Native 10.1.99.0/24 10.1.99.1   ةكبشلا ةزهجأ ةرادإ
+( VLAN  .)ةدياحملا 
+200 ISP_Edge 209.165.200.224/29 209.165.200.225   يجراخلا طبرلا ةكبش
+( Public Subnet .)
+ 
+6.2  ( طاقنلل ةينيبلا طباورلا ةفوفصم Point-to-Point Connectivity Matrix ) 
+/ نيوانع مادختساب ةفلتخملا ةكبشلا تاقبط نيب تانايبلا لقنل طباورلا هذه مدختست 30  .قاطنلا ريفوتل 
+( طبارلا Link Name ) ( لولأا زاهجلا IP ) ( يناثلا زاهجلا IP )  ةيعرفلا ةكبشلا  هيجوتلا عون 
+ASA to Core 172.16.0.1 
+ ( ASA VIP ) 
+172.16.0.3 
+  ( Core VIP ) 
+172.16.0.0/29 Static/OSPF 
+Core1 to Core2 10.255.0.21 10.255.0.22 10.255.0.20/30 OSPF Area 0 
+Core1 to Dist1 10.255.0.5 10.255.0.6 10.255.0.4/30 OSPF Area 0 
+Core2 to Dist1 10.255.0.13 10.255.0.14 10.255.0.12/30 OSPF Area 0
+3  ( ةيفرطلا تامدخلاو ةمظنلأا قيثوت End-System Documentation ) 
+ يفرطلا زاهجلا   ةكبشلا
+( VLAN ) 
+ ـلا ناونع IP   ةباوبلا
+( Gateway ) 
+ رودلا / ةفيظولا 
+Server-DC 37 10.1.37.10 10.1.37.1 DNS, Web, Email Services . 
+WLC 2504 99 10.1.99.254 10.1.99.1 Wireless Management 
+Controller . 
+CME Router 20 10.1.20.254 10.1.20.1 VoIP Telephony Gateway . 
+Access 
+Points 
+99 DHCP 10.1.99.1 Wireless Connectivity . 
+Admin PC 10 10.1.10.100 10.1.10.1 Network Management 
+Station .
+7 ( ةكبشلا ةزهجأ تادادعإو يجمربلا ذيفنتلا . Configuration Scripts ) 
+( ةلماكلا ةيجمربلا رماولأا مسقلا اذه نمضتي Scripts ـلا ةئيب ليغشتل ةدمتعملا ) Zero Down . 
+ 
+7.1 ( تنرتنلإا رتوار ةجمرب ISP Router ةفاحلا لوحمو ) 
+ 
+( ةفاحلا لوحم موقي امنيب ،ةتباث ةباوبك لمعيل دوزملا رتوار دادعإ متي Outside Switch .ةراشلإا ميسقتب ) 
+ 
+ISP-Router Config : 
+ 
+enable 
+configure terminal 
+hostname ISP-Router 
+interface GigabitEthernet 0/0/0 
+ description Internet_Gateway 
+ ip address 209.165.200.225 255.255.255.248 
+ no shutdown 
+exit 
+ 
+ 
+Outside-Switch Config : 
+ 
+enable 
+configure terminal 
+hostname Outside-Switch 
+vlan 200 
+ name ISP_Connection 
+exit 
+interface range fastEthernet 0/1 - 24 
+ switchport mode access 
+ switchport access vlan 200 
+ no shutdown 
+exit
+2  ( ةيامحلا ناردج ةجمرب ASA Firewall Failover ) 
+ ـلا دادعإ دعي Failover  .ةيرانلا ناردجلا دحأ لطعت دنع ةمدخلا ةيرارمتسا نامضو ةفاحلا نيمأتل ةيوازلا رجح وه 
+ 
+ASA-Primary (Active) : 
+ 
+ciscoasa >enable 
+ciscoasa #configure terminal 
+hostname ASA-Primary 
+activation-key 0x1321CF73 0xFCB68F7E 0x801111DC 0xB554E4A4 0x0F3E008D 
+interface Vlan1 
+ nameif inside 
+ security-level 100 
+ ip address 172.16.0.1 255.255.255.248 
+ standby 172.16.0.2 
+interface Vlan2 
+ nameif outside 
+ security-level 0 
+ ip address 209.165.200.226 255.255.255.248 
+ standby 209.165.200.227 
+failover lan unit primary 
+failover lan interface FOLINK Ethernet1/3 
+failover key SecretKey123 
+failover link FOLINK Ethernet1/3 
+failover interface ip FOLINK 10.0.0.1 255.255.255.252 standby 10.0.0.2 
+failover
+3 ( ةاونلا ةقبط ةجمرب Core Switches هيجوتلا تايلمعو ) 
+ .ةيضارتفلاا تاراسملا رشنو ةكبشلا لتك ةفاك طبر نع ةلوؤسم ةاونلا ةقبط 
+ 
+Core-SW1 Config : 
+enable 
+configure terminal 
+hostname Core-SW1 
+ip routing 
+interface range GigabitEthernet 1/0/1 - 2 
+no switchport 
+channel-group 12 mode active 
+exit 
+interface Port-channel 12 
+ip address 10.255.0.21 255.255.255.252 
+exit 
+router ospf 1 
+router-id 1.1.1.10 
+network 172.16.0.0 0.0.0.7 area 0 
+network 10.255.0.0 0.0.255.255 area 0 
+default-information originate 
+exit 
+ 
+ 4 ( عيزوتلا ةقبط ةجمرب Distribution Switches  تاباوبو ) HSRP 
+  لوكوتورب مادختساب اهراركتو نيمدختسملا تاباوب ليعفت متي ،ةقبطلا هذه يف HSRP . 
+Dist-SW1 (HSRP Active) : 
+enable 
+configure terminal 
+hostname Dist-SW1 
+ip routing 
+vlan 10,20,37,70,90,99 
+exit 
+interface vlan 10 
+ ip address 10.1.10.2 255.255.255.0 
+ standby 10 ip 10.1.10.1 
+ standby 10 priority 150 
+ standby 10 preempt 
+ no shutdown 
+interface vlan 20 
+ ip address 10.1.20.2 255.255.255.0 
+ standby 20 ip 10.1.20.1 
+ standby 20 priority 150 
+ standby 20 preempt 
+ no shutdown 
+interface range GigabitEthernet 1/0/1 - 2 
+ no switchport 
+ channel-group 10 mode active 
+exit 
+interface Port-channel 10 
+ ip address 10.255.0.5 255.255.255.252 
+exit
+
+5 ( لوصولا ةقبط ةجمرب Access Switches ذفانملا نمأو ) 
+ .توصلا رورم ةكرح فينصتو ذفانملا ةيامح ىلع انه تادادعلإا زكرت 
+Access-SW1 Config : 
+enable 
+configure terminal 
+hostname Access-SW1 
+interface range fastEthernet 0/1 - 20 
+ switchport mode access 
+ switchport access vlan 10 
+ switchport voice vlan 20 
+ spanning-tree portfast 
+ spanning-tree bpduguard enable 
+ switchport port-security 
+ switchport port-security maximum 2 
+ switchport port-security mac-address sticky 
+ no shutdown 
+exit
+6  ( ةيزكرملا تامدخلا تادادعإ DHCP  & VoIP  & Wireless ) 
+ ـلا نيوانع عيزوت متي IP ( فتاوهلا تارايخ ليعفتو ً ايلآ Option 150 .ةيكلسلالا ةكبشلاو ) 
+DHCP Pools (on Dist-SW1) : 
+ip dhcp pool DATA_USERS 
+ network 10.1.10.0 255.255.255.0 
+ default-router 10.1.10.1 
+ dns-server 10.1.37.10 
+ip dhcp pool VOICE_USERS 
+ network 10.1.20.0 255.255.255.0 
+ default-router 10.1.20.1 
+ option 150 ip 10.1.20.254 
+ip dhcp pool WIRELESS_MGMT 
+ network 10.1.99.0 255.255.255.0 
+ default-router 10.1.99.1 
+ opti
+
+8 ( تامدخلل ةيتحتلا ةينبلا ةسدنه . Service Infrastructure ) 
+ .تانايبلا زكارم يف ليغشتلا ديق تاقيبطتلا ءاقب تامدخلل ةيتحتلا ةينبلا نمضت ،تانايبلا لقن ةكبشلا نمضت امنيب 
+ 
+8.1 ( ةيضارتفلاا ةبسوحلا ةقبط Proxmox VE Cluster ) 
+ 
+ ماظن ىلع ةقبطلا هذه دمتعت Proxmox Virtual Environment   ( "دوقنع" ءاشنلإ Cluster ـلا ةيصاخ ليعفت متي .مداوخلا نم ) HA  
+ ( ةيضارتفا ةلآ يأ نأ نامضل VM  لخاد ميلس رخآ مداخ ىلع يلآ لكشبو ً اروف اهليغشت ةداعإ متي ،داتعلا يف لطع ببسب طقست )
+.دوقنعلا 1  لوكوتورب ىلع ةيلمعلا هذه دمتعت Corosync ( باصنلا ةرادلإ Quorum .تاضراعت ثودح مدع نامضو ) 
+ 
+ ماظن مادختسا مت Proxmox Virtual Environment ( دوقنع ءاشنلإ Cluster .ةيئايزيفلا مداوخلا نم ) 
+• :دوقنعلا موهفم ( مداوخ ةدع طبر متي Nodes  دقعلا نم يدرف ددعل لوصولل طيطختلا مت ،انعورشم يف .دحاو نايكك لمعتل ) 
+(3 Nodes ( ةيبلغلأا قيقحتل ) Quorum .تيوصتلا يف ) 
+•  ـلا ةيمهأ Quorum :  مدختسي Proxmox  لوكوتورب Corosync   تارارق دوقنعلا ذختي يكل .دقعلا نيب لاصتلاا ةرادلإ
+ نم رثكأ كانه نوكي نأ بجي ،)هل ةفيضتسملا ةدقعلا تطقس يضارتفا زاهج ليغشت ةداعإ لثم( ةيريصم 50  تاوصلأا نم %
+ .ةحاتم دوجو 3  لشف لمحتي ماظنلا نأ ينعي دقع 1  .لمعلا يف رمتسيو ةلماك دقع 
+•  ةيلآ Fencing : ( "غامدلا ماسقنا" ةلاح عنمل Split-brain  ةزهجأ مادختسا متي ،نلاوؤسملا امهنأ دوقنعلا نم نآزج دقتعي ثيح )
+Fencing  ،دساف لكشب تانايبلل اهتباتك مدع نامضل )اهنع ءابرهكلا عطق ًلاثم( ً ايئايزيف ةلطعتملا ةدقعلا لزعب ةزهجلأا هذه موقت .
+ .نامأب تامدخلا ىلع ذاوحتسلااب ةميلسلا دقعلل حمسي امم 
+ 
+ 
+8.2 ( عزوملا نيزختلا ةقبط Ceph Storage SDS ) 
+ 
+( يديلقتلا نيزختلا SAN/NAS وه عورشملا اذه يف لحلا .ةفلكمو ةيزكرم لشف ةطقن لثمي ) Ceph  ً ايجمرب فرعم نيزخت ماظن وهو ،
+( SDS .) 
+•  :لمعي فيك  موقي Ceph  ةدقع لك يف ةدوجوملا ةبلصلا صارقلأا عيمجتب Proxmox  .ةكرتشم ةدحاو نيزخت ةدحوك اهرهظيو 
+•  ةيمزراوخ CRUSH :  ـل ضبانلا بلقلا يه Ceph  ،)ءطب ببسي امم( تانايبلا ناكم ةفرعمل ةيزكرم لوادج مادختسا نم ًلادب .
+ ةيمزراوخ موقت CRUSH ( يهانتملالا عسوتلاب ماظنلل حمسي اذه . ً ايضاير تانايبلا ناكم باسحب Scalability  تانايبلا عيزوتو )
+ .صارقلأا ربع دحومو يئاوشع لكشب 
+• :يتاذلا ءافشلاو راركتلا  نيوكت مت Ceph  لمعل 3 ( تانايب ةعطق لك نم خسن Replication Factor = 3  مداخ قرتحا اذإ .)
+ فشتكي .نييرخأ نيتخسن يف ةدوجوم لازت لا تانايبلا نإف ،لماكلاب Ceph ( خسنلا ةداعإ يف ً اروف أدبيو دقفلا Rebalancing  )
+ .يرشب لخدت يأ نود بولطملا ةيامحلا ىوتسم ةداعتسلا 
+ ماظن مادختسا متي ،ةبلصلا صارقلأا فلت دنع تانايبلا نادقف رطاخم ىلع ءاضقلل Ceph  يف صارقلأا ةفاك جمدب ماظنلا اذه موقي .
+.كرتشم مخض دحاو صرقك رهظتل مداوخلا 
+• ( راركتلا لماع Replication :)  نيزخت متي 3  ( ةمولعم لك نم خسن 3 x Replication .ةفلتخم ةيئايزيف مداوخ ىلع ) 
+•  ةيمزراوخ CRUSH :  .دح
+3 ( تايواحلا قيسنت ةقبط Docker Swarm Orchestration ) 
+ 
+" قيقحتل Zero Downtime مدختسن ،تاقيبطتلل يقيقح " Docker Swarm . 
+•  ـلا يف ةلكشملا HA  :يديلقتلا   يف Proxmox HA ـلا ليغشت ةداعإ متي ،ةدقع تطقس اذإ ، VM   ينعي اذه .ىرخأ ةدقع ىلع
+ .)علاقلإا تقو( نيتقيقد وأ ةقيقد ةدمل ً افقوت 
+•  عم لحلا Swarm :  ًلاثم( ةمدخلا ليغشتب موقن Web Server  ـك ) 3 ( خسن Replicas ىلع ةعزوم ) 3 VMs  .ةفلتخم 
+• Ingress Routing Mesh :   يف ةيرحسلا ةزيملا هذه Swarm ( ذفنملا حتفت Port 80  عيمج ىلع )ًلاثم لا دقع . 
+ ( يلخادلا هيجوتلا ماظن موقي ،ةدقع يلأ ً ابلط مدختسملا لسرأ اذإ IPVS  وأ ةيواح تطقس اذإ .ةطشن ةيواح يلأ بلطلا هيجوتب )
+ ـلا فشتكي ،ةدقع Swarm   ً امامت فقوتلا تقو مادعنا ينعي امم ،ةيقبتملا تايواحلل ةكرحلا هيجوتب موقيو ً اروف كلذ 
+( Zero Downtime .مدختسملا رظن ةهجو نم ) 
+( تايواحك تاقيبطتلا ليغشت متي ،ينقتلا مرهلا ىلعأ يف Containers ةطساوب ةرادم ) Docker Swarm . 
+• ( ددعتملا ليغشتلا Replicas :)  .دقعلا ىلع اهعيزوتو قيبطت لك نم خسن ةدع ليغشت متي 
+• Routing Mesh :   امم ،ً اقباس اهب لصتي ناك يتلا ةدقعلا تطقس ول ىتح ةطشن ةيواح يلأ مدختسملا هيجوت نمضت ةزيم
+" ققحي Zero Downtime .مدختسملا رظن ةهجو نم يقيقح " 
+9 ( يليغشتلا رابتخلااو ققحتلا تاهويرانيس . Verification Scenarios ) 
+ ةيلاتلا تارابتخلاا ذيفنت مت ،ةينقتلا ثراوكلا ةهجاوم يف ميمصتلا ةءافك نم دكأتلل 1 : 
+ 
+ رابتخلاا عون  ذختملا ءارجلإا   ةعقوتملا ةجيتنلا
+( Status ) 
+ حاجنلل يملعلا ريسفتلا 
+ ةاونلا لباك لشف  ـلا تلاباك دحأ لصف Fiber   يف
+EtherChannel . 
+  ـلا رارمتسا Ping   نود
+ .ةمزح يأ نادقف 
+ ةينقت موقت LACP   كيفارتلا ليوحتب
+ .ً اروف يقبتملا لباكلل 
+  ةباوبلا لشف
+( HSRP ) 
+ لوحملا قلاغإ Dist-SW1  
+.لماكلاب 
+ ـل ةباوبلا لاقتنا Dist
+SW2   للاخ 3  . ٍناوث 
+  ـلا لئاسر بايغ لوكوتوربلا فشتكي
+Hello  ـلا ةيقرتب موقيو Standby . 
+  رادج لشف
+ ةيامحلا 
+ نع ةقاطلا لصف ASA-1 .   ـلا تاسلج رارمتسا
+HTTPS   ـلاو VoIP . 
+ ةزيم Stateful Failover   لقنت
+.يناثلا زاهجلل تلااحلا لودج 1 
+  ةدقعلا لشف
+( Ceph ) 
+ .لماكلاب نيزخت مداخ فاقيإ   ةحاتم تانايبلا ءاقب
+ .ةباتكلاو ةءارقلل 
+  تانايبلا نم نيتيفاضإ نيتخسن دوجو
+.ىرخأ دقع ىلع 1 
+

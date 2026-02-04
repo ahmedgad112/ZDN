@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاختبار التشغيلي - Turning Point</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="project-title">Turning Point</h1>
+            <p class="project-subtitle">Zero Down Network & Service</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="Executive Summary.html">1. الملخص التنفيذي</a>
+            <a href="Administrative structure.html">2. الهيكل الإداري</a>
+            <a href="Theoretical framework.html">3. الإطار النظري</a>
+            <a href="Infrastructure.html">4. البنية التحتية</a>
+            <a href="physical connections.html">5. التوصيلات الفيزيائية</a>
+            <a href="Logical design.html">6. التصميم المنطقي</a>
+            <a href="Software implementation.html">7. التنفيذ البرمجي</a>
+            <a href="Service infrastructure.html">8. البنية التحتية للخدمات</a>
+            <a href="Operational test.html" class="active">9. الاختبار التشغيلي</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content full-width">
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle-container">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+
+            <!-- Documentation Content -->
+            <article class="documentation">
+                <div id="docContent">
+
+                    <h1>9. سيناريوهات التحقق والاختبار التشغيلي (Verification Scenarios)</h1>
+
+                    <p>للتأكد من كفاءة التصميم في مواجهة الكوارث التقنية، تم تنفيذ الاختبارات التالية:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>نوع الاختبار</th>
+                                <th>الإجراء المتخذ</th>
+                                <th>النتيجة المتوقعة (Status)</th>
+                                <th>التفسير العلمي للنجاح</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>فشل كابل النواة</td>
+                                <td>فصل أحد كابلات الـFiber في EtherChannel.</td>
+                                <td>استمرار الـPing دون فقدان أي حزمة.</td>
+                                <td>تقوم تقنية LACP بتحويل الترافيك للكابل المتبقي فورًا.</td>
+                            </tr>
+                            <tr>
+                                <td>فشل البوابة (HSRP)</td>
+                                <td>إغلاق المحول Dist-SW1 بالكامل.</td>
+                                <td>انتقال البوابة لـDist SW2 خلال 3 ثوانٍ.</td>
+                                <td>يكتشف البروتوكول غياب رسائل الـHello ويقوم بالترقية الـStandby.</td>
+                            </tr>
+                            <tr>
+                                <td>فشل جدار الحماية</td>
+                                <td>فصل الطاقة عن ASA-1.</td>
+                                <td>استمرار جلسات الـHTTPS والـVoIP.</td>
+                                <td>ميزة Stateful Failover تنقل جدول الحالات للجهاز الثاني.</td>
+                            </tr>
+                            <tr>
+                                <td>فشل العقدة (Ceph)</td>
+                                <td>إيقاف خادم تخزين بالكامل.</td>
+                                <td>بقاء البيانات متاحة للقراءة والكتابة.</td>
+                                <td>وجود نسختين إضافيتين من البيانات على عقد أخرى.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="navigation-buttons">
+                        <a href="Service infrastructure.html" class="nav-btn prev">← البنية التحتية للخدمات</a>
+                        <a href="index.html" class="nav-btn next">العودة للرئيسية →</a>
+                    </div>
+
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

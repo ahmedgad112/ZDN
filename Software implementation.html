@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التنفيذ البرمجي - Turning Point</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="project-title">Turning Point</h1>
+            <p class="project-subtitle">Zero Down Network & Service</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="Executive Summary.html">1. الملخص التنفيذي</a>
+            <a href="Administrative structure.html">2. الهيكل الإداري</a>
+            <a href="Theoretical framework.html">3. الإطار النظري</a>
+            <a href="Infrastructure.html">4. البنية التحتية</a>
+            <a href="physical connections.html">5. التوصيلات الفيزيائية</a>
+            <a href="Logical design.html">6. التصميم المنطقي</a>
+            <a href="Software implementation.html" class="active">7. التنفيذ البرمجي</a>
+            <a href="Service infrastructure.html">8. البنية التحتية للخدمات</a>
+            <a href="Operational test.html">9. الاختبار التشغيلي</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content full-width">
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle-container">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+
+            <!-- Documentation Content -->
+            <article class="documentation">
+                <div id="docContent">
+
+                    <h1>7. التنفيذ البرمجي وإعدادات أجهزة الشبكة (Configuration Scripts)</h1>
+
+                    <p>يتضمن هذا القسم الأوامر البرمجية الكاملة (Scripts) المعتمدة لتشغيل بيئة الـZero Down.</p>
+
+                    <h2>7.1 برمجة راوتر الإنترنت (ISP Router) ومحول الحافة</h2>
+
+                    <p>يتم إعداد راوتر المزود ليعمل كبوابة ثابتة، بينما يقوم محول الحافة (Outside Switch) بتقسيم
+                        الإشارة.</p>
+
+                    <h3>ISP-Router Config :</h3>
+
+                    <pre><code>enable
+configure terminal
+hostname ISP-Router
+interface GigabitEthernet 0/0/0
+ description Internet_Gateway
+ ip address 209.165.200.225 255.255.255.248
+ no shutdown
+exit
+</code></pre>
+
+                    <h3>Outside-Switch Config :</h3>
+
+                    <pre><code>enable
+configure terminal
+hostname Outside-Switch
+vlan 200
+ name ISP_Connection
+exit
+interface range fastEthernet 0/1 - 24
+ switchport mode access
+ switchport access vlan 200
+ no shutdown
+exit
+</code></pre>
+
+                    <h2>7.2 برمجة جدران الحماية (ASA Firewall Failover)</h2>
+
+                    <p>يعد إعداد الـFailover هو حجر الزاوية لتأمين الحافة وضمان استمرارية الخدمة عند تعطل أحد الجدران
+                        النارية.</p>
+
+                    <h3>ASA-Primary (Active) :</h3>
+
+                    <pre><code>ciscoasa >enable
+ciscoasa #configure terminal
+hostname ASA-Primary
+activation-key 0x1321CF73 0xFCB68F7E 0x801111DC 0xB554E4A4 0x0F3E008D
+interface Vlan1
+ nameif inside
+ security-level 100
+ ip address 172.16.0.1 255.255.255.248
+ standby 172.16.0.2
+interface Vlan2
+ nameif outside
+ security-level 0
+ ip address 209.165.200.226 255.255.255.248
+ standby 209.165.200.227
+failover lan unit primary
+failover lan interface FOLINK Ethernet1/3
+failover key SecretKey123
+failover link FOLINK Ethernet1/3
+failover interface ip FOLINK 10.0.0.1 255.255.255.252 standby 10.0.0.2
+failover
+</code></pre>
+
+                    <h2>7.3 برمجة طبقة النواة (Core Switches) وعمليات التوجيه</h2>
+
+                    <p>طبقة النواة مسؤولة عن ربط كافة كتل الشبكة ونشر المسارات الافتراضية.</p>
+
+                    <h3>Core-SW1 Config :</h3>
+
+                    <pre><code>enable
+configure terminal
+hostname Core-SW1
+ip routing
+interface range GigabitEthernet 1/0/1 - 2
+no switchport
+channel-group 12 mode active
+exit
+interface Port-channel 12
+ip address 10.255.0.21 255.255.255.252
+exit
+router ospf 1
+router-id 1.1.1.10
+network 172.16.0.0 0.0.0.7 area 0
+network 10.255.0.0 0.0.255.255 area 0
+default-information originate
+exit
+</code></pre>
+
+                    <h2>7.4 برمجة طبقة التوزيع (Distribution Switches) وبوابات HSRP</h2>
+
+                    <p>في هذه الطبقة، يتم تفعيل بوابات المستخدمين وتكرارها باستخدام بروتوكول HSRP.</p>
+
+                    <h3>Dist-SW1 (HSRP Active) :</h3>
+
+                    <pre><code>enable
+configure terminal
+hostname Dist-SW1
+ip routing
+vlan 10,20,37,70,90,99
+exit
+interface vlan 10
+ ip address 10.1.10.2 255.255.255.0
+ standby 10 ip 10.1.10.1
+ standby 10 priority 150
+ standby 10 preempt
+ no shutdown
+interface vlan 20
+ ip address 10.1.20.2 255.255.255.0
+ standby 20 ip 10.1.20.1
+ standby 20 priority 150
+ standby 20 preempt
+ no shutdown
+interface range GigabitEthernet 1/0/1 - 2
+ no switchport
+ channel-group 10 mode active
+exit
+interface Port-channel 10
+ ip address 10.255.0.5 255.255.255.252
+exit
+</code></pre>
+
+                    <h2>7.5 برمجة طبقة الوصول (Access Switches) وأمن المنافذ</h2>
+
+                    <p>تركز الإعدادات هنا على حماية المنافذ وتصنيف حركة مرور الصوت.</p>
+
+                    <h3>Access-SW1 Config :</h3>
+
+                    <pre><code>enable
+configure terminal
+hostname Access-SW1
+interface range fastEthernet 0/1 - 20
+ switchport mode access
+ switchport access vlan 10
+ switchport voice vlan 20
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky
+ no shutdown
+exit
+</code></pre>
+
+                    <h2>7.6 إعدادات الخدمات المركزية (DHCP & VoIP & Wireless)</h2>
+
+                    <p>يتم توزيع عناوين الـIP آليًا وتفعيل خيارات الهواتف (Option 150) والشبكة اللاسلكية.</p>
+
+                    <h3>DHCP Pools (on Dist-SW1) :</h3>
+
+                    <pre><code>ip dhcp pool DATA_USERS
+ network 10.1.10.0 255.255.255.0
+ default-router 10.1.10.1
+ dns-server 10.1.37.10
+ip dhcp pool VOICE_USERS
+ network 10.1.20.0 255.255.255.0
+ default-router 10.1.20.1
+ option 150 ip 10.1.20.254
+ip dhcp pool WIRELESS_MGMT
+ network 10.1.99.0 255.255.255.0
+ default-router 10.1.99.1
+ opti
+</code></pre>
+
+                    <div class="navigation-buttons">
+                        <a href="Logical design.html" class="nav-btn prev">← التصميم المنطقي</a>
+                        <a href="Service infrastructure.html" class="nav-btn next">البنية التحتية للخدمات →</a>
+                    </div>
+
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
