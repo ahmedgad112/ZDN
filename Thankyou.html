@@ -1,48 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank you</title>
+    <title>شكراً لكم - Turning Point</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 300px auto;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-            text-align: center;
+        :root {
+            --primary-color: #8b5cf6;
+            --secondary-color: #06b6d4;
+            --accent-color: #a78bfa;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --bg-primary: #fafbfc;
+            --bg-secondary: #f0f4f8;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+            --shadow-md: 0 4px 12px rgba(139, 92, 246, 0.15);
+            --shadow-lg: 0 10px 25px rgba(139, 92, 246, 0.2);
+        }
+
+        [data-theme="dark"] {
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+        }
+
+        .thankyou-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: var(--bg-primary);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.05) 0px, transparent 50%);
+        }
+
+        .thankyou-content {
             max-width: 800px;
-            
+            width: 100%;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        h1 {
-            color: #4CAF50;
-            font-size: 36px;
-            margin-bottom: 20px;
-
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        a {
-            color: #4CAF50;
+        .thankyou-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .thankyou-message {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .supervision-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .supervision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .supervision-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .supervision-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .supervision-list li {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        [data-theme="dark"] .supervision-list li {
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .supervision-list li:hover {
+            background: rgba(139, 92, 246, 0.1);
+            transform: translateX(-5px);
+        }
+
+        .supervision-list li::before {
+            content: '👨‍🏫';
+            margin-left: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .supervision-list li:nth-child(2)::before {
+            content: '👩‍🏫';
+        }
+
+        .supervision-list li:nth-child(3)::before {
+            content: '👨‍💼';
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1rem 2.5rem;
+            background: var(--gradient-secondary);
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .back-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .back-link:active {
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            .thankyou-title {
+                font-size: 2rem;
+            }
+
+            .thankyou-message {
+                font-size: 1rem;
+            }
+
+            .supervision-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .supervision-title {
+                font-size: 1.2rem;
+            }
+
+            .supervision-list li {
+                font-size: 1.1rem;
+                padding: 0.8rem;
+            }
+
+            .back-link {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
         }
     </style>
-    <h1>Thank You for Visiting Our Documentation!</h1>
-    <p>We appreciate your time and interest in our project. If you have any questions or feedback, please feel free to
-        reach out.</p>
-    <p>Best regards,<br>The Turning Point Team</p>
-    <p><a href="index.html">Back to Home</a></p>
+
+    <div class="thankyou-container">
+        <div class="thankyou-content">
+            <h1 class="thankyou-title">شكراً لكم!</h1>
+            <p class="thankyou-message">
+                نشكركم على زيارة موقع التوثيق الخاص بمشروعنا.<br>
+                نقدّر وقتكم واهتمامكم بمشروعنا. إذا كان لديكم أي أسئلة أو ملاحظات، لا تترددوا في التواصل معنا.
+            </p>
+
+            <div class="supervision-card">
+                <h2 class="supervision-title">تحت إشراف</h2>
+                <ul class="supervision-list">
+                    <li>الأستاذ الدكتور/ أسامة النحاس</li>
+                    <li>الدكتورة/ إيمان</li>
+                    <li>المهندس/ فيصل أبو العلا</li>
+                </ul>
+            </div>
+
+            <a href="index.html" class="back-link">العودة إلى الصفحة الرئيسية</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">تم التصميم بواسطة <span class="designer-name">Ahmed Gad</span></p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

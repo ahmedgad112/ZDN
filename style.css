@@ -1321,13 +1321,73 @@ body {
 }
 
 /* ============================================
+   Footer Styles
+   ============================================ */
+footer {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 4rem;
+    box-shadow: 0 -4px 12px rgba(139, 92, 246, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-text {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.95;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer-text .designer-name {
+    font-weight: 700;
+    color: #e0e7ff;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 1.5rem 1rem;
+        margin-top: 3rem;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
    Print Styles
    ============================================ */
 @media print {
     .sidebar,
     .theme-toggle-container,
     .copy-code-btn,
-    .header {
+    .header,
+    footer {
         display: none;
     }
 
