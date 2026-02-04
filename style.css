@@ -335,6 +335,8 @@ body {
     margin: 0 auto;
     padding: 2rem 1.5rem;
     gap: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* ============================================
@@ -1029,29 +1031,102 @@ body {
 /* ============================================
    Responsive Design
    ============================================ */
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+    display: none;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.mobile-menu-toggle.active {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 968px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+        margin-top: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .main-nav.active {
+        display: flex;
+        max-height: 1000px;
+    }
+
+    .main-nav a {
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+    }
+}
+
 @media (max-width: 968px) {
     .container {
         flex-direction: column;
         padding: 1.5rem 1rem;
         gap: 1.5rem;
+        max-width: 100%;
     }
 
     .sidebar {
         width: 100%;
         position: relative;
         top: 0;
-        max-height: none;
+        max-height: 400px;
         margin-bottom: 1rem;
+        order: 2;
+    }
+
+    .main-content {
+        order: 1;
+        width: 100%;
+    }
+
+    .main-content.full-width {
+        width: 100%;
     }
 
     .theme-toggle-container {
         position: relative;
         top: 0;
         margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .theme-toggle {
+        position: relative;
+        margin: 0 auto;
     }
 
     .header {
         padding: 2rem 1rem;
+        position: relative;
+    }
+
+    .header-content {
+        padding: 0 0.5rem;
     }
 
     .project-title {
@@ -1066,6 +1141,8 @@ body {
     .quote-banner {
         padding: 1rem;
         margin-top: 1rem;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
     }
 
     .quote-text {
@@ -1101,6 +1178,29 @@ body {
         overflow-x: auto;
         white-space: nowrap;
         font-size: 0.95rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .documentation table thead,
+    .documentation table tbody,
+    .documentation table tr {
+        display: block;
+    }
+
+    .documentation table th,
+    .documentation table td {
+        display: block;
+        text-align: right;
+        padding: 0.75rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .documentation table th::before,
+    .documentation table td::before {
+        content: attr(data-label) ": ";
+        font-weight: 700;
+        display: inline-block;
+        min-width: 120px;
     }
 
     .main-nav {
@@ -1113,11 +1213,20 @@ body {
         text-align: center;
         width: 100%;
         padding: 0.75rem 1rem;
+        white-space: normal;
+        word-break: break-word;
+        font-size: 0.9rem;
+    }
+
+    .main-nav a:hover {
+        transform: translateY(-2px) scale(1.02);
     }
 
     .navigation-buttons {
         flex-direction: column;
         gap: 1rem;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
     }
 
     .nav-btn {
@@ -1170,6 +1279,21 @@ body {
 
     .container {
         padding: 1rem 0.75rem;
+        gap: 1rem;
+    }
+
+    .sidebar {
+        max-height: 300px;
+        padding: 1rem;
+    }
+
+    .nav-title {
+        font-size: 1.2rem;
+    }
+
+    .nav-list a {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
     }
 
     .documentation {
@@ -1208,16 +1332,53 @@ body {
 
     .documentation table {
         font-size: 0.85rem;
+        display: block;
+        width: 100%;
+    }
+
+    .documentation table thead {
+        display: none;
+    }
+
+    .documentation table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .documentation table tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 0.5rem;
     }
 
     .documentation table th,
     .documentation table td {
-        padding: 0.65rem 0.875rem;
+        display: block;
+        padding: 0.5rem;
+        text-align: right;
+        border: none;
+    }
+
+    .documentation table td::before {
+        content: attr(data-label) ": ";
+        font-weight: 700;
+        display: inline-block;
+        min-width: 100px;
+        color: var(--accent-color);
     }
 
     .documentation pre {
         padding: 1rem;
         font-size: 0.85rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .documentation pre code {
+        white-space: pre;
+        word-wrap: normal;
     }
 
     .documentation code {
@@ -1238,6 +1399,51 @@ body {
         text-align: center;
         padding: 0.875rem 1.5rem;
         font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 1.5rem 0.75rem;
+        margin-top: 2rem;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
+
+    .quote-banner {
+        margin-top: 1rem;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .sidebar {
+        max-height: 400px;
+        margin-bottom: 1.5rem;
+    }
+
+    .documentation img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 1rem auto;
+    }
+
+    .documentation video,
+    .documentation iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .documentation blockquote {
+        padding: 1rem;
+        margin: 1rem 0;
+        font-size: 0.95rem;
+    }
+
+    .documentation hr {
+        margin: 1.5rem 0;
     }
 
     .nav-btn {
@@ -1371,11 +1577,139 @@ footer::before {
 @media (max-width: 768px) {
     footer {
         padding: 1.5rem 1rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
     .footer-text {
+        font-size: 0.85rem;
+        padding: 0 1rem;
+    }
+
+    .header {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .main-nav {
+        padding: 0.75rem;
+    }
+
+    .main-nav a {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 641px) and (max-width: 968px) {
+    .container {
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .documentation {
+        padding: 2rem 1.5rem;
+    }
+
+    .main-nav {
+        gap: 0.75rem;
+        padding: 1.25rem;
+    }
+
+    .main-nav a {
+        padding: 0.7rem 1.2rem;
         font-size: 0.9rem;
+    }
+
+    .sidebar {
+        max-height: 450px;
+    }
+
+    .documentation h1 {
+        font-size: 2rem;
+    }
+
+    .documentation h2 {
+        font-size: 1.65rem;
+    }
+
+    .documentation h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .header {
+        padding: 1rem 0.5rem;
+    }
+
+    .project-title {
+        font-size: 1.6rem;
+    }
+
+    .project-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .quote-text {
+        font-size: 0.85rem;
+    }
+
+    .main-nav {
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .main-nav a {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .documentation {
+        padding: 1rem 0.75rem;
+    }
+
+    .documentation h1 {
+        font-size: 1.4rem;
+    }
+
+    .documentation h2 {
+        font-size: 1.2rem;
+    }
+
+    .documentation h3 {
+        font-size: 1.1rem;
+    }
+
+    .toc-container {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .toc-list > li {
+        margin-bottom: 0.75rem;
+    }
+
+    .toc-list > li > ul {
+        margin-top: 0.5rem;
+        margin-right: 1rem;
+    }
+
+    .nav-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 1rem 0.5rem;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
     }
 }
 

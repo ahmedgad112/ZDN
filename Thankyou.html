@@ -171,31 +171,90 @@
             transform: translateY(-1px);
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
+            .thankyou-container {
+                padding: 1.5rem;
+            }
+
             .thankyou-title {
                 font-size: 2rem;
             }
 
             .thankyou-message {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .supervision-card {
                 padding: 2rem 1.5rem;
             }
+        }
+
+        @media (max-width: 768px) {
+            .thankyou-container {
+                padding: 1rem;
+            }
+
+            .thankyou-title {
+                font-size: 1.75rem;
+            }
+
+            .thankyou-message {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .supervision-card {
+                padding: 1.5rem 1rem;
+                margin: 1.5rem 0;
+            }
 
             .supervision-title {
                 font-size: 1.2rem;
+                margin-bottom: 1.5rem;
             }
 
             .supervision-list li {
-                font-size: 1.1rem;
+                font-size: 1rem;
                 padding: 0.8rem;
+                margin: 1rem 0;
             }
 
             .back-link {
                 padding: 0.8rem 2rem;
+                font-size: 0.95rem;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .thankyou-container {
+                padding: 0.75rem;
+            }
+
+            .thankyou-title {
+                font-size: 1.5rem;
+            }
+
+            .thankyou-message {
+                font-size: 0.9rem;
+            }
+
+            .supervision-card {
+                padding: 1rem 0.75rem;
+            }
+
+            .supervision-title {
                 font-size: 1rem;
+            }
+
+            .supervision-list li {
+                font-size: 0.9rem;
+                padding: 0.6rem;
+            }
+
+            .back-link {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -208,7 +267,8 @@
         <div class="quote-banner">
             <p class="quote-text">نقطة التحول في البنية التحتية للشبكات والخدمات</p>
         </div>
-        <nav class="main-nav">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
+        <nav class="main-nav" id="mainNav">
             <a href="index.html" >الرئيسية</a>
             <a href="Executive Summary.html">1. الملخص التنفيذي</a>
             <a href="Administrative structure.html">2. الهيكل الإداري</a>
@@ -236,7 +296,6 @@
                 <ul class="supervision-list">
                     <li>الأستاذ الدكتور/ أسامة النحاس</li>
                     <li>الدكتورة/ إيمان</li>
-                    <li>المهندس/ فيصل أبو العلا</li>
                 </ul>
             </div>
 
